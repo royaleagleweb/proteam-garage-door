@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the ProTeam Garage Door team — experienced, certified professionals dedicated to quality garage door installation and repair across South Florida.">
+    <meta name="keywords" content="ProTeam Garage Door team, garage door technicians South Florida, certified garage door installers, Broward County garage door experts">
+    <meta name="robots" content="index, follow">
+    <title>Meet Our Team | ProTeam Garage Door — South Florida's Trusted Experts</title>
+    <link rel="canonical" href="https://royaleagleweb.github.io/proteam-garage-door/team.html">
+
+    <meta property="og:title" content="Meet Our Team | ProTeam Garage Door">
+    <meta property="og:description" content="Get to know the certified professionals behind ProTeam Garage Door — South Florida's trusted garage door company.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://royaleagleweb.github.io/proteam-garage-door/team.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Meet Our Team — ProTeam Garage Door",
+        "description": "Meet the experienced, certified professionals behind ProTeam Garage Door.",
+        "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "ProTeam Garage Door",
+            "telephone": "+19545551234",
+            "foundingDate": "2004",
+            "numberOfEmployees": {"@type": "QuantitativeValue", "value": "25"},
+            "areaServed": {"@type": "State", "name": "Florida"}
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://royaleagleweb.github.io/proteam-garage-door/"},
+            {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://royaleagleweb.github.io/proteam-garage-door/about.html"},
+            {"@type": "ListItem", "position": 3, "name": "Our Team"}
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+
+    <style>
+        :root {
+            --primary: #0F4C3A;
+            --accent: #2ECC71;
+            --primary-light: #1A6B52;
+            --primary-dark: #0A3328;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 5rem 0;
+            background: #f9fafb;
+        }
+
+        .team-section .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .team-section .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .team-section .section-header p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.5rem 2rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eef1f0;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(15, 76, 58, 0.15);
+        }
+
+        .team-card-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            display: block;
+            border: 4px solid var(--accent);
+            box-shadow: 0 4px 16px rgba(46, 204, 113, 0.2);
+        }
+
+        .team-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-card-title {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .team-card-bio {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .team-card-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .team-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(15, 76, 58, 0.07);
+            color: var(--primary);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .team-badge i {
+            font-size: 0.72rem;
+            color: var(--accent);
+        }
+
+        .team-card-social {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .team-card-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.85rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .team-card-social a:hover {
+            background: var(--accent);
+            transform: scale(1.1);
+        }
+
+        /* Join Our Team Section */
+        .join-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .join-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .join-section p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .join-benefits {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .join-benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .join-benefit i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .join-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .join-cta-buttons .btn {
+            padding: 0.9rem 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .join-cta-buttons .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .join-cta-buttons .btn-accent {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+        }
+
+        .join-cta-buttons .btn-accent:hover {
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+        }
+
+        .join-cta-buttons .btn-outline-light {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .join-cta-buttons .btn-outline-light:hover {
+            border-color: #fff;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-section .section-header h2,
+            .join-section h2 {
+                font-size: 1.7rem;
+            }
+
+            .team-card {
+                padding: 2rem 1.5rem 1.75rem;
+            }
+
+            .team-card-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .join-benefits {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fas fa-map-marker-alt"></i> Serving Broward & Palm Beach County</span>
+                <span><i class="fas fa-clock"></i> Mon-Sat: 7AM - 7PM | Emergency 24/7</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:+19545551234"><i class="fas fa-phone"></i> (954) 555-1234</a>
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-warehouse"></i></span>
+                <div class="logo-text">
+                    <span class="logo-name">ProTeam</span>
+                    <span class="logo-tagline">Garage Door</span>
+                </div>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="index.html#services" class="nav-link nav-dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="services/garage-door-installation.html">Garage Door Installation</a>
+                        <a href="services/garage-door-repair.html">Garage Door Repair</a>
+                        <a href="services/garage-door-openers.html">Opener Systems</a>
+                        <a href="services/spring-replacement.html">Spring Replacement</a>
+                        <a href="services/hurricane-garage-doors.html">Hurricane-Rated Doors</a>
+                        <a href="services/commercial-garage-doors.html">Commercial Doors</a>
+                        <a href="services/garage-door-maintenance.html">Maintenance & Tune-Up</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="index.html#service-areas" class="nav-link nav-dropdown-toggle">Locations <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu nav-dropdown-mega">
+                        <a href="locations/fort-lauderdale.html">Fort Lauderdale</a>
+                        <a href="locations/boca-raton.html">Boca Raton</a>
+                        <a href="locations/pompano-beach.html">Pompano Beach</a>
+                        <a href="locations/coral-springs.html">Coral Springs</a>
+                        <a href="locations/west-palm-beach.html">West Palm Beach</a>
+                        <a href="locations/hollywood.html">Hollywood</a>
+                        <a href="locations/plantation.html">Plantation</a>
+                        <a href="locations/davie.html">Davie</a>
+                        <a href="locations/weston.html">Weston</a>
+                        <a href="locations/deerfield-beach.html">Deerfield Beach</a>
+                        <a href="locations/delray-beach.html">Delray Beach</a>
+                        <a href="locations/boynton-beach.html">Boynton Beach</a>
+                        <a href="locations/sunrise.html">Sunrise</a>
+                        <a href="locations/parkland.html">Parkland</a>
+                        <a href="locations/coconut-creek.html">Coconut Creek</a>
+                        <a href="locations/jupiter.html">Jupiter</a>
+                        <a href="locations/palm-beach-gardens.html">Palm Beach Gardens</a>
+                        <a href="locations/wellington.html">Wellington</a>
+                        <a href="locations/margate.html">Margate</a>
+                        <a href="locations/tamarac.html">Tamarac</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link active">About</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="garage-door-styles.html">Garage Door Styles</a>
+                        <a href="parts-accessories.html">Parts &amp; Accessories</a>
+                        <a href="faq.html">FAQ &amp; Support</a>
+                        <a href="financing.html">Financing</a>
+                        <a href="specials.html">Specials &amp; Coupons</a>
+                    </div>
+                </div>
+                <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="contact.html" class="btn btn-primary header-cta">Free Estimate</a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <a href="about.html">About Us</a> <span>/</span> <span>Our Team</span>
+            </nav>
+            <h1>Meet Our <span class="highlight">Team</span></h1>
+            <p>The skilled, certified professionals behind every ProTeam installation and repair.</p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The People Behind ProTeam</h2>
+                <p>Our team brings decades of combined experience, factory certifications, and a genuine passion for quality craftsmanship to every job.</p>
+            </div>
+            <div class="team-grid">
+
+                <!-- Marco Reyes -->
+                <div class="team-card">
+                    <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Marco Reyes — Owner and Lead Installer at ProTeam Garage Door" class="team-card-photo" loading="lazy">
+                    <h3>Marco Reyes</h3>
+                    <span class="team-card-title">Owner &amp; Lead Installer</span>
+                    <p class="team-card-bio">With over 20 years of hands-on experience, Marco founded ProTeam Garage Door with a commitment to honest pricing and superior craftsmanship. He personally oversees every major installation and holds Clopay Master Certified Dealer status.</p>
+                    <div class="team-card-badges">
+                        <span class="team-badge"><i class="fas fa-certificate"></i> Clopay Master Certified</span>
+                        <span class="team-badge"><i class="fas fa-star"></i> 20+ Years Experience</span>
+                        <span class="team-badge"><i class="fas fa-id-card"></i> FL Licensed</span>
+                    </div>
+                    <div class="team-card-social">
+                        <a href="mailto:marco@proteamgaragedoor.com" aria-label="Email Marco"><i class="fas fa-envelope"></i></a>
+                        <a href="#" aria-label="Marco on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="tel:+19545551234" aria-label="Call Marco"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <!-- Sarah Mitchell -->
+                <div class="team-card">
+                    <img src="https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Sarah Mitchell — Operations Manager at ProTeam Garage Door" class="team-card-photo" loading="lazy">
+                    <h3>Sarah Mitchell</h3>
+                    <span class="team-card-title">Operations Manager</span>
+                    <p class="team-card-bio">Sarah has been with ProTeam for 12 years and keeps every aspect of the operation running smoothly. She manages scheduling, customer relations, and vendor partnerships, ensuring every project stays on time and on budget.</p>
+                    <div class="team-card-badges">
+                        <span class="team-badge"><i class="fas fa-calendar-check"></i> Scheduling Expert</span>
+                        <span class="team-badge"><i class="fas fa-star"></i> 12 Years with ProTeam</span>
+                    </div>
+                    <div class="team-card-social">
+                        <a href="mailto:sarah@proteamgaragedoor.com" aria-label="Email Sarah"><i class="fas fa-envelope"></i></a>
+                        <a href="#" aria-label="Sarah on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="tel:+19545551234" aria-label="Call Sarah"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <!-- David Chen -->
+                <div class="team-card">
+                    <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="David Chen — Senior Technician at ProTeam Garage Door" class="team-card-photo" loading="lazy">
+                    <h3>David Chen</h3>
+                    <span class="team-card-title">Senior Technician</span>
+                    <p class="team-card-bio">David brings 15 years of specialized expertise in garage door spring systems and opener mechanisms. As a LiftMaster Certified Technician, he diagnoses and resolves even the most complex mechanical issues quickly and safely.</p>
+                    <div class="team-card-badges">
+                        <span class="team-badge"><i class="fas fa-certificate"></i> LiftMaster Certified</span>
+                        <span class="team-badge"><i class="fas fa-cogs"></i> Spring &amp; Opener Specialist</span>
+                        <span class="team-badge"><i class="fas fa-star"></i> 15 Years Experience</span>
+                    </div>
+                    <div class="team-card-social">
+                        <a href="mailto:david@proteamgaragedoor.com" aria-label="Email David"><i class="fas fa-envelope"></i></a>
+                        <a href="#" aria-label="David on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="tel:+19545551234" aria-label="Call David"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <!-- Carlos Rivera -->
+                <div class="team-card">
+                    <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Carlos Rivera — Installation Specialist at ProTeam Garage Door" class="team-card-photo" loading="lazy">
+                    <h3>Carlos Rivera</h3>
+                    <span class="team-card-title">Installation Specialist</span>
+                    <p class="team-card-bio">Carlos has 10 years of experience and is our go-to expert for hurricane-rated garage door installations. Fluent in both English and Spanish, he ensures every South Florida homeowner understands their options for storm protection.</p>
+                    <div class="team-card-badges">
+                        <span class="team-badge"><i class="fas fa-wind"></i> Hurricane Door Expert</span>
+                        <span class="team-badge"><i class="fas fa-language"></i> Bilingual EN/ES</span>
+                        <span class="team-badge"><i class="fas fa-star"></i> 10 Years Experience</span>
+                    </div>
+                    <div class="team-card-social">
+                        <a href="mailto:carlos@proteamgaragedoor.com" aria-label="Email Carlos"><i class="fas fa-envelope"></i></a>
+                        <a href="#" aria-label="Carlos on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="tel:+19545551234" aria-label="Call Carlos"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <!-- James Thompson -->
+                <div class="team-card">
+                    <img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="James Thompson — Commercial Division Lead at ProTeam Garage Door" class="team-card-photo" loading="lazy">
+                    <h3>James Thompson</h3>
+                    <span class="team-card-title">Commercial Division Lead</span>
+                    <p class="team-card-bio">With 18 years in the industry, James leads our commercial garage door division. He specializes in warehouses, loading docks, and rolling steel doors, managing large-scale projects for businesses across South Florida.</p>
+                    <div class="team-card-badges">
+                        <span class="team-badge"><i class="fas fa-building"></i> Commercial Specialist</span>
+                        <span class="team-badge"><i class="fas fa-industry"></i> Rolling Steel Expert</span>
+                        <span class="team-badge"><i class="fas fa-star"></i> 18 Years Experience</span>
+                    </div>
+                    <div class="team-card-social">
+                        <a href="mailto:james@proteamgaragedoor.com" aria-label="Email James"><i class="fas fa-envelope"></i></a>
+                        <a href="#" aria-label="James on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="tel:+19545551234" aria-label="Call James"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <!-- Ana Rodriguez -->
+                <div class="team-card">
+                    <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Ana Rodriguez — Customer Service Lead at ProTeam Garage Door" class="team-card-photo" loading="lazy">
+                    <h3>Ana Rodriguez</h3>
+                    <span class="team-card-title">Customer Service Lead</span>
+                    <p class="team-card-bio">Ana has been the friendly voice of ProTeam for 8 years, handling scheduling, estimates, and customer inquiries. Bilingual in English and Spanish, she makes sure every customer feels heard and taken care of from the first call.</p>
+                    <div class="team-card-badges">
+                        <span class="team-badge"><i class="fas fa-headset"></i> Customer Relations</span>
+                        <span class="team-badge"><i class="fas fa-language"></i> Bilingual EN/ES</span>
+                        <span class="team-badge"><i class="fas fa-star"></i> 8 Years with ProTeam</span>
+                    </div>
+                    <div class="team-card-social">
+                        <a href="mailto:ana@proteamgaragedoor.com" aria-label="Email Ana"><i class="fas fa-envelope"></i></a>
+                        <a href="#" aria-label="Ana on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="tel:+19545551234" aria-label="Call Ana"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Team -->
+    <section class="join-section">
+        <div class="container">
+            <h2>Join Our Team</h2>
+            <p>We're always looking for skilled, dependable garage door technicians and installers to join the ProTeam family. If you take pride in your work and want to be part of a company that values its people, we'd love to hear from you.</p>
+            <div class="join-benefits">
+                <div class="join-benefit"><i class="fas fa-check-circle"></i> Competitive Pay</div>
+                <div class="join-benefit"><i class="fas fa-check-circle"></i> Paid Training &amp; Certifications</div>
+                <div class="join-benefit"><i class="fas fa-check-circle"></i> Health Benefits</div>
+                <div class="join-benefit"><i class="fas fa-check-circle"></i> Company Vehicle</div>
+                <div class="join-benefit"><i class="fas fa-check-circle"></i> Growth Opportunities</div>
+            </div>
+            <div class="join-cta-buttons">
+                <a href="mailto:careers@proteamgaragedoor.com" class="btn btn-accent"><i class="fas fa-paper-plane"></i> Apply Now</a>
+                <a href="tel:+19545551234" class="btn btn-outline-light"><i class="fas fa-phone"></i> (954) 555-1234</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-icon"><i class="fas fa-warehouse"></i></span>
+                        <div class="logo-text">
+                            <span class="logo-name">ProTeam</span>
+                            <span class="logo-tagline">Garage Door</span>
+                        </div>
+                    </a>
+                    <p>South Florida's trusted garage door experts. Over 20 years of quality installations, repairs, and hurricane protection across Broward and Palm Beach County.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                        <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="services/garage-door-installation.html">Garage Door Installation</a>
+                    <a href="services/garage-door-repair.html">Garage Door Repair</a>
+                    <a href="services/garage-door-openers.html">Opener Systems</a>
+                    <a href="services/spring-replacement.html">Spring Replacement</a>
+                    <a href="services/hurricane-garage-doors.html">Hurricane-Rated Doors</a>
+                    <a href="services/commercial-garage-doors.html">Commercial Doors</a>
+                    <a href="services/garage-door-maintenance.html">Maintenance</a>
+                    <a href="garage-door-styles.html">Garage Door Styles</a>
+                    <a href="parts-accessories.html">Parts &amp; Accessories</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Service Areas</h4>
+                    <a href="locations/fort-lauderdale.html">Fort Lauderdale</a>
+                    <a href="locations/boca-raton.html">Boca Raton</a>
+                    <a href="locations/west-palm-beach.html">West Palm Beach</a>
+                    <a href="locations/coral-springs.html">Coral Springs</a>
+                    <a href="locations/pompano-beach.html">Pompano Beach</a>
+                    <a href="locations/hollywood.html">Hollywood</a>
+                    <a href="locations/weston.html">Weston</a>
+                    <a href="locations/plantation.html">Plantation</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="faq.html">FAQ &amp; Support</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="specials.html">Specials &amp; Coupons</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+19545551234">(954) 555-1234</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@proteamgaragedoor.com">info@proteamgaragedoor.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Serving Broward & Palm Beach County</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 7AM-7PM | Emergency 24/7</p>
+                    <div class="footer-license">
+                        <p><i class="fas fa-id-card"></i> FL Licensed Contractor</p>
+                        <p><i class="fas fa-shield-halved"></i> Fully Insured</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ProTeam Garage Door. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="tel:+19545551234" class="floating-cta" aria-label="Call us"><i class="fas fa-phone"></i></a>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
