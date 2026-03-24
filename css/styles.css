@@ -4,19 +4,19 @@
 
 /* ---------- CSS Variables ---------- */
 :root {
-    --primary: #1B3A5C;
-    --primary-dark: #122940;
-    --primary-light: #2A5580;
-    --accent: #E8852E;
-    --accent-dark: #D07020;
-    --accent-light: #F5A623;
-    --dark: #1A1A2E;
-    --dark-gray: #333333;
-    --gray: #6B7280;
-    --light-gray: #E5E7EB;
-    --lighter-gray: #F3F4F6;
+    --primary: #0F4C3A;
+    --primary-dark: #0A3328;
+    --primary-light: #1A6B52;
+    --accent: #2ECC71;
+    --accent-dark: #27AE60;
+    --accent-light: #58D68D;
+    --dark: #0D1B16;
+    --dark-gray: #2C3E36;
+    --gray: #5F7A6E;
+    --light-gray: #D5E0DA;
+    --lighter-gray: #EDF2EF;
     --white: #FFFFFF;
-    --success: #10B981;
+    --success: #2ECC71;
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
     --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
@@ -363,7 +363,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.03)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0)"/></linearGradient></defs><rect fill="url(%23g)" width="1440" height="900"/><circle cx="200" cy="150" r="300" fill="rgba(232,133,46,0.05)"/><circle cx="1200" cy="600" r="400" fill="rgba(255,255,255,0.03)"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.03)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0)"/></linearGradient></defs><rect fill="url(%23g)" width="1440" height="900"/><circle cx="200" cy="150" r="300" fill="rgba(46,204,113,0.05)"/><circle cx="1200" cy="600" r="400" fill="rgba(255,255,255,0.03)"/></svg>');
     background-size: cover;
 }
 
@@ -373,7 +373,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(ellipse at 30% 50%, rgba(232,133,46,0.1) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 30% 50%, rgba(46,204,113,0.1) 0%, transparent 70%);
 }
 
 .hero-content {
@@ -387,7 +387,7 @@ img {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(232,133,46,0.2);
+    background: rgba(46,204,113,0.2);
     color: var(--accent-light);
     font-family: var(--font-heading);
     font-weight: 700;
@@ -395,7 +395,7 @@ img {
     letter-spacing: 1px;
     padding: 8px 24px;
     border-radius: 50px;
-    border: 1px solid rgba(232,133,46,0.3);
+    border: 1px solid rgba(46,204,113,0.3);
     margin-bottom: 24px;
 }
 
@@ -661,8 +661,8 @@ img {
 }
 
 .hurricane .section-badge {
-    background: rgba(232,133,46,0.2);
-    border: 1px solid rgba(232,133,46,0.3);
+    background: rgba(46,204,113,0.2);
+    border: 1px solid rgba(46,204,113,0.3);
     color: var(--accent-light);
 }
 
@@ -833,7 +833,7 @@ img {
 }
 
 .testimonial-stars {
-    color: #F5A623;
+    color: #58D68D;
     font-size: 0.95rem;
     margin-bottom: 16px;
     display: flex;
@@ -904,7 +904,7 @@ img {
     display: flex;
     align-items: center;
     gap: 2px;
-    color: #F5A623;
+    color: #58D68D;
     font-size: 0.8rem;
 }
 
@@ -1099,7 +1099,7 @@ img {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(232,133,46,0.1);
+    box-shadow: 0 0 0 3px rgba(46,204,113,0.1);
 }
 
 .form-group input::placeholder,
@@ -1306,7 +1306,7 @@ img {
     align-items: center;
     justify-content: center;
     font-size: 1.3rem;
-    box-shadow: 0 4px 20px rgba(232,133,46,0.4);
+    box-shadow: 0 4px 20px rgba(46,204,113,0.4);
     z-index: 999;
     transition: var(--transition);
     animation: pulse 2s infinite;
@@ -1318,9 +1318,9 @@ img {
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(232,133,46,0.5); }
-    70% { box-shadow: 0 0 0 15px rgba(232,133,46,0); }
-    100% { box-shadow: 0 0 0 0 rgba(232,133,46,0); }
+    0% { box-shadow: 0 0 0 0 rgba(46,204,113,0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(46,204,113,0); }
+    100% { box-shadow: 0 0 0 0 rgba(46,204,113,0); }
 }
 
 /* ---------- Back to Top ---------- */
@@ -1436,7 +1436,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(ellipse at 30% 50%, rgba(232,133,46,0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 30% 50%, rgba(46,204,113,0.08) 0%, transparent 70%);
 }
 
 .page-hero .container {
@@ -1676,7 +1676,7 @@ img {
 .cta-banner .btn-primary:hover {
     background: var(--primary-dark);
     border-color: var(--primary-dark);
-    box-shadow: 0 8px 20px rgba(27, 58, 92, 0.35);
+    box-shadow: 0 8px 20px rgba(15, 76, 58, 0.35);
 }
 
 /* ---------- Area Links ---------- */

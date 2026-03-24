@@ -180,8 +180,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Simulate form submission (replace with actual endpoint)
             setTimeout(function () {
                 submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                submitBtn.style.background = '#10B981';
-                submitBtn.style.borderColor = '#10B981';
+                submitBtn.style.background = '#2ECC71';
+                submitBtn.style.borderColor = '#2ECC71';
 
                 // Reset form
                 setTimeout(function () {
