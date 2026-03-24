@@ -16,8 +16,9 @@
                 'Get a free estimate',
                 'Emergency repair',
                 'Services we offer',
-                'Service areas',
-                'Hours & contact info'
+                'Door styles',
+                'Financing options',
+                'Current specials'
             ]
         },
         'get a free estimate': {
@@ -167,6 +168,90 @@
             text: "Head to our hurricane doors page for full details!",
             options: ['Get a free estimate', 'Services we offer'],
             link: { text: 'View Hurricane Doors Page', url: 'services/hurricane-garage-doors.html' }
+        },
+        'door styles': {
+            text: "We offer a wide range of garage door styles to match any home:\n\n" +
+                  "- Modern & Contemporary (aluminum/glass)\n" +
+                  "- Traditional Raised Panel\n" +
+                  "- Carriage House\n" +
+                  "- Mediterranean\n" +
+                  "- Wood-Look Composite\n" +
+                  "- Impact Glass (full-view)\n" +
+                  "- Custom Designs\n" +
+                  "- Flush Panel\n\n" +
+                  "We're a Clopay Master Authorized Dealer and also carry Amarr, Wayne Dalton, C.H.I., and Raynor.",
+            options: ['Get a free estimate', 'Hurricane doors', 'View styles page'],
+            link: { text: 'Browse Door Styles', url: 'garage-door-styles.html' }
+        },
+        'view styles page': {
+            text: "Check out our full gallery of garage door styles!",
+            options: ['Get a free estimate', 'Services we offer'],
+            link: { text: 'View Styles Page', url: 'garage-door-styles.html' }
+        },
+        'financing options': {
+            text: "We offer flexible financing to make your new garage door affordable:\n\n" +
+                  "- 0% interest if paid within 18 months\n" +
+                  "- Quick same-day approval\n" +
+                  "- No prepayment penalties\n" +
+                  "- Available on installations $1,000+\n\n" +
+                  "A new garage door can return up to 194% ROI and may lower your insurance premiums!",
+            options: ['Get a free estimate', 'Door styles', 'View financing page'],
+            link: { text: 'Learn About Financing', url: 'financing.html' }
+        },
+        'view financing page': {
+            text: "I'll take you to our financing page for all the details!",
+            options: ['Get a free estimate', 'Services we offer'],
+            link: { text: 'View Financing Page', url: 'financing.html' }
+        },
+        'current specials': {
+            text: "We have several promotions running right now:\n\n" +
+                  "- $50 off any new door installation\n" +
+                  "- Free keypad with opener purchase\n" +
+                  "- $25 off garage door tune-up\n" +
+                  "- 10% off hurricane-rated door upgrades\n" +
+                  "- Buy one spring, get 2nd free\n" +
+                  "- Senior & military 10% discount\n\n" +
+                  "Mention the promotion when scheduling!",
+            options: ['Get a free estimate', 'Financing options', 'View specials page'],
+            link: { text: 'View All Specials', url: 'specials.html' }
+        },
+        'view specials page': {
+            text: "Check out our current deals and promotions!",
+            options: ['Get a free estimate', 'Services we offer'],
+            link: { text: 'View Specials Page', url: 'specials.html' }
+        },
+        'parts accessories': {
+            text: "We stock a full inventory of garage door parts and accessories:\n\n" +
+                  "- Remotes & wireless keypads\n" +
+                  "- Springs, cables & rollers\n" +
+                  "- Weather seals & bottom seals\n" +
+                  "- Panels & track hardware\n" +
+                  "- Smart home WiFi modules\n" +
+                  "- LiftMaster & Chamberlain accessories\n\n" +
+                  "Most parts available same-day!",
+            options: ['Opener systems', 'Door repair', 'View parts page'],
+            link: { text: 'Browse Parts & Accessories', url: 'parts-accessories.html' }
+        },
+        'view parts page': {
+            text: "Head to our parts page for the full inventory!",
+            options: ['Get a free estimate', 'Services we offer'],
+            link: { text: 'View Parts Page', url: 'parts-accessories.html' }
+        },
+        'faq': {
+            text: "Our FAQ & Support Center has answers to common questions about:\n\n" +
+                  "- Garage door troubleshooting\n" +
+                  "- Opener & remote programming\n" +
+                  "- Maintenance tips\n" +
+                  "- Installation process\n" +
+                  "- Safety guidelines\n\n" +
+                  "Or just ask me — I might have the answer!",
+            options: ['Door won\'t open', 'Broken spring', 'Opener systems', 'View FAQ page'],
+            link: { text: 'Visit FAQ Center', url: 'faq.html' }
+        },
+        'view faq page': {
+            text: "I'll take you to our full FAQ & Support Center!",
+            options: ['Get a free estimate', 'Services we offer'],
+            link: { text: 'View FAQ Page', url: 'faq.html' }
         }
     };
 
@@ -356,6 +441,33 @@
                 'off track': 'door off track',
                 'maintenance': 'other services',
                 'tune': 'other services',
+                'style': 'door styles',
+                'modern': 'door styles',
+                'traditional': 'door styles',
+                'carriage': 'door styles',
+                'mediterranean': 'door styles',
+                'wood': 'door styles',
+                'glass': 'door styles',
+                'flush': 'door styles',
+                'financ': 'financing options',
+                'payment': 'financing options',
+                'afford': 'financing options',
+                'interest': 'financing options',
+                'special': 'current specials',
+                'coupon': 'current specials',
+                'deal': 'current specials',
+                'discount': 'current specials',
+                'promotion': 'current specials',
+                'save': 'current specials',
+                'part': 'parts accessories',
+                'accessor': 'parts accessories',
+                'keypad': 'parts accessories',
+                'seal': 'parts accessories',
+                'roller': 'parts accessories',
+                'faq': 'faq',
+                'question': 'faq',
+                'how do': 'faq',
+                'troubleshoot': 'faq',
                 'hello': 'greeting',
                 'hi': 'greeting',
                 'hey': 'greeting',
