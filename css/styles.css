@@ -1355,6 +1355,435 @@ img {
     transform: translateY(-3px);
 }
 
+/* ---------- Navigation Dropdowns ---------- */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-dropdown-toggle i {
+    font-size: 0.65rem;
+    transition: var(--transition);
+}
+
+.nav-dropdown:hover .nav-dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 240px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: var(--transition);
+    z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 8px 20px;
+    font-size: 0.88rem;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    color: var(--dark-gray);
+    transition: var(--transition);
+}
+
+.nav-dropdown-menu a:hover {
+    background: var(--lighter-gray);
+    color: var(--accent);
+    padding-left: 24px;
+}
+
+.nav-dropdown-mega {
+    min-width: 480px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 16px 0;
+}
+
+/* ---------- Page Hero (Inner Pages) ---------- */
+.page-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+    padding: 80px 0 60px;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(232,133,46,0.08) 0%, transparent 70%);
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.page-hero h1 .highlight {
+    color: var(--accent-light);
+}
+
+.page-hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 600px;
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.6);
+}
+
+.breadcrumb a {
+    color: rgba(255,255,255,0.7);
+}
+
+.breadcrumb a:hover {
+    color: var(--accent-light);
+}
+
+.breadcrumb span {
+    color: rgba(255,255,255,0.5);
+}
+
+/* ---------- Content Layout (About, Service, Location pages) ---------- */
+.content-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 60px;
+    align-items: start;
+}
+
+.content-main h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    margin-top: 40px;
+}
+
+.content-main h2:first-child {
+    margin-top: 0;
+}
+
+.content-main h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    margin-top: 32px;
+}
+
+.content-main p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.content-main ul, .content-main ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+.content-main li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+    margin-bottom: 6px;
+}
+
+/* ---------- Sidebar ---------- */
+.content-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-cta {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: var(--white);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 24px;
+}
+
+.sidebar-cta h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.sidebar-cta p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.sidebar-cta .btn {
+    margin-bottom: 10px;
+}
+
+.sidebar-cta .btn-outline {
+    border-color: rgba(255,255,255,0.5);
+}
+
+.sidebar-cta .btn-outline:hover {
+    border-color: var(--white);
+}
+
+.sidebar-stats {
+    background: var(--lighter-gray);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+}
+
+.sidebar-stat {
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.sidebar-stat:last-child {
+    border-bottom: none;
+}
+
+.sidebar-stat strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--accent);
+}
+
+.sidebar-stat span {
+    font-size: 0.85rem;
+    color: var(--gray);
+}
+
+/* ---------- Values Grid (About page) ---------- */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 24px 0;
+}
+
+.value-card {
+    background: var(--lighter-gray);
+    padding: 28px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.value-card i {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.value-card h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.value-card p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* ---------- CTA Banner ---------- */
+.cta-banner {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    padding: 60px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.cta-banner h2 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.cta-banner p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 28px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-banner .btn-outline {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.cta-banner .btn-outline:hover {
+    background: var(--white);
+    color: var(--accent);
+}
+
+.cta-banner .btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.cta-banner .btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    box-shadow: 0 8px 20px rgba(27, 58, 92, 0.35);
+}
+
+/* ---------- Area Links ---------- */
+.areas-grid-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.area-link {
+    padding: 10px 22px;
+    background: var(--lighter-gray);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--dark-gray);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.area-link:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+/* ---------- Contact Benefits (Contact page) ---------- */
+.contact-benefits {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.contact-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+}
+
+.contact-benefits i {
+    color: var(--success);
+    font-size: 1rem;
+}
+
+/* ---------- Services List (Service/Location inner pages) ---------- */
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.services-list a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: var(--lighter-gray);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    transition: var(--transition);
+}
+
+.services-list a:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.services-list a i {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.services-list a:hover i {
+    color: var(--white);
+}
+
+/* ---------- Location Cities Grid (Location pages) ---------- */
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.cities-grid a {
+    padding: 10px 16px;
+    background: var(--lighter-gray);
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--dark-gray);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.cities-grid a:hover {
+    background: var(--accent);
+    color: var(--white);
+}
+
 /* ---------- Animations ---------- */
 @keyframes fadeInUp {
     from {
@@ -1409,7 +1838,7 @@ img {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 280px;
+        width: 300px;
         height: 100vh;
         background: var(--white);
         flex-direction: column;
@@ -1418,6 +1847,7 @@ img {
         transition: right 0.3s ease;
         z-index: 1001;
         gap: 0;
+        overflow-y: auto;
     }
 
     .nav.active {
@@ -1432,6 +1862,74 @@ img {
 
     .nav-link::after {
         display: none;
+    }
+
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .nav-dropdown-toggle {
+        width: 100%;
+        justify-content: space-between;
+        padding: 14px 0;
+        font-size: 1rem;
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        min-width: auto;
+        padding: 0;
+        display: none;
+        background: var(--lighter-gray);
+        border-radius: var(--radius-sm);
+        margin-bottom: 8px;
+    }
+
+    .nav-dropdown.open .nav-dropdown-menu {
+        display: block;
+    }
+
+    .nav-dropdown-mega {
+        min-width: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .nav-dropdown-menu a {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    .page-hero {
+        padding: 60px 0 40px;
+    }
+
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+
+    .content-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .content-sidebar {
+        position: static;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cities-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .header-cta {

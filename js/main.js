@@ -25,6 +25,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ---------- Mobile Dropdown Navigation ----------
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(function (toggle) {
+        toggle.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                var parent = this.closest('.nav-dropdown');
+                parent.classList.toggle('open');
+            }
+        });
+    });
+
     // ---------- Header Scroll Effect ----------
     const header = document.getElementById('header');
 
