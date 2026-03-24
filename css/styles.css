@@ -352,7 +352,8 @@ img {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+    background: linear-gradient(135deg, rgba(10,51,40,0.85) 0%, rgba(15,76,58,0.8) 50%, rgba(26,107,82,0.75) 100%),
+                url('https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop') center/cover no-repeat;
     overflow: hidden;
 }
 
@@ -595,21 +596,12 @@ img {
     align-items: center;
 }
 
-.why-us-image .image-placeholder {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+.why-us-image img {
     border-radius: var(--radius-xl);
+    width: 100%;
     height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.5);
-    font-size: 1.2rem;
-    gap: 12px;
-}
-
-.image-placeholder i {
-    font-size: 4rem;
+    object-fit: cover;
+    box-shadow: var(--shadow-lg);
 }
 
 .why-us-content h2 {
@@ -770,10 +762,36 @@ img {
     overflow: hidden;
     cursor: pointer;
     transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    background: var(--white);
 }
 
 .gallery-item:hover {
     transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    padding: 16px;
+    background: var(--white);
+}
+
+.gallery-caption h4 {
+    font-size: 1rem;
+    margin: 0 0 4px;
+    color: var(--dark);
+}
+
+.gallery-caption p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin: 0;
 }
 
 .gallery-placeholder {
@@ -1423,7 +1441,8 @@ img {
 /* ---------- Page Hero (Inner Pages) ---------- */
 .page-hero {
     position: relative;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+    background: linear-gradient(135deg, rgba(10,51,40,0.88) 0%, rgba(15,76,58,0.82) 50%, rgba(26,107,82,0.78) 100%),
+                url('https://images.pexels.com/photos/8031881/pexels-photo-8031881.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop') center/cover no-repeat;
     padding: 80px 0 60px;
     color: var(--white);
     overflow: hidden;
@@ -1989,7 +2008,7 @@ img {
         order: -1;
     }
 
-    .why-us-image .image-placeholder {
+    .why-us-image img {
         height: 300px;
     }
 
