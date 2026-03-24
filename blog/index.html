@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ProTeam Garage Door blog — expert tips, buying guides, maintenance advice, and industry insights for homeowners in South Florida.">
+    <meta name="robots" content="index, follow">
+    <title>Garage Door Blog & Resources | ProTeam Garage Door</title>
+    <link rel="canonical" href="https://royaleagleweb.github.io/proteam-garage-door/blog/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .blog-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .blog-card-body {
+            padding: 24px;
+        }
+        .blog-tag {
+            display: inline-block;
+            background: #EDF2EF;
+            color: #0F4C3A;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            padding: 4px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .blog-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .blog-card h3 a {
+            color: #0D1B16;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .blog-card h3 a:hover {
+            color: #2ECC71;
+        }
+        .blog-card p {
+            font-size: 0.9rem;
+            color: #5F7A6E;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .blog-meta {
+            font-size: 0.8rem;
+            color: #8FA89B;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .blog-meta i {
+            margin-right: 4px;
+        }
+        .blog-featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 0;
+        }
+        .blog-featured img {
+            height: 100%;
+            min-height: 300px;
+        }
+        .blog-featured .blog-card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+        .blog-featured h3 {
+            font-size: 1.5rem;
+        }
+        .blog-categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        .blog-cat-btn {
+            padding: 8px 20px;
+            border: 2px solid #D5E0DA;
+            border-radius: 50px;
+            background: #fff;
+            color: #0F4C3A;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .blog-cat-btn:hover, .blog-cat-btn.active {
+            background: #0F4C3A;
+            color: #fff;
+            border-color: #0F4C3A;
+        }
+        @media (max-width: 900px) {
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+            .blog-featured { grid-template-columns: 1fr; }
+            .blog-featured img { min-height: 200px; }
+        }
+        @media (max-width: 600px) {
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fas fa-map-marker-alt"></i> Serving Broward & Palm Beach County</span>
+                <span><i class="fas fa-clock"></i> Mon-Sat: 7AM - 7PM | Emergency 24/7</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:+19545551234"><i class="fas fa-phone"></i> (954) 555-1234</a>
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-warehouse"></i></span>
+                <div class="logo-text">
+                    <span class="logo-name">ProTeam</span>
+                    <span class="logo-tagline">Garage Door</span>
+                </div>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="../index.html#services" class="nav-link nav-dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="../services/garage-door-installation.html">Garage Door Installation</a>
+                        <a href="../services/garage-door-repair.html">Garage Door Repair</a>
+                        <a href="../services/garage-door-openers.html">Opener Systems</a>
+                        <a href="../services/spring-replacement.html">Spring Replacement</a>
+                        <a href="../services/hurricane-garage-doors.html">Hurricane-Rated Doors</a>
+                        <a href="../services/commercial-garage-doors.html">Commercial Doors</a>
+                        <a href="../services/garage-door-maintenance.html">Maintenance & Tune-Up</a>
+                    </div>
+                </div>
+                <a href="../about.html" class="nav-link">About</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="../contact.html" class="btn btn-primary header-cta">Free Estimate</a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Home</a> <span>/</span> <span>Blog & Resources</span>
+            </nav>
+            <h1>Garage Door <span class="highlight">Blog & Resources</span></h1>
+            <p>Expert tips, buying guides, maintenance advice, and industry insights for South Florida homeowners.</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Category Filters -->
+            <div class="blog-categories">
+                <button class="blog-cat-btn active" data-cat="all">All Posts</button>
+                <button class="blog-cat-btn" data-cat="maintenance">Maintenance</button>
+                <button class="blog-cat-btn" data-cat="buying-guide">Buying Guides</button>
+                <button class="blog-cat-btn" data-cat="repair">Repair & Troubleshooting</button>
+                <button class="blog-cat-btn" data-cat="hurricane">Hurricane Prep</button>
+                <button class="blog-cat-btn" data-cat="style">Style & Design</button>
+                <button class="blog-cat-btn" data-cat="smart-home">Smart Home</button>
+            </div>
+
+            <div class="blog-grid" id="blog-grid">
+                <!-- Featured Post -->
+                <div class="blog-card blog-featured" data-cat="buying-guide">
+                    <img src="https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop" alt="How to choose the right garage door" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Buying Guide</span>
+                        <h3><a href="how-to-choose-the-right-garage-door.html">How to Choose the Right Garage Door for Your South Florida Home</a></h3>
+                        <p>A complete guide to materials, styles, insulation, hurricane ratings, and budgets. Everything you need to know before buying a new garage door in Broward or Palm Beach County.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 15, 2026</span><span><i class="fas fa-clock"></i> 8 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="blog-card" data-cat="maintenance">
+                    <img src="https://images.pexels.com/photos/8186510/pexels-photo-8186510.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Garage door maintenance checklist" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Maintenance</span>
+                        <h3><a href="seasonal-garage-door-maintenance-checklist.html">The Complete Seasonal Garage Door Maintenance Checklist</a></h3>
+                        <p>Keep your garage door running smoothly year-round with this step-by-step maintenance guide for South Florida homeowners.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 12, 2026</span><span><i class="fas fa-clock"></i> 7 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="blog-card" data-cat="repair">
+                    <img src="https://images.pexels.com/photos/4682081/pexels-photo-4682081.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Signs your garage door springs need replacement" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Repair</span>
+                        <h3><a href="signs-garage-door-springs-need-replacement.html">5 Warning Signs Your Garage Door Springs Need Replacement</a></h3>
+                        <p>Learn to spot the telltale signs of failing springs before they snap — and why you should never attempt a DIY fix.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 10, 2026</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 4 -->
+                <div class="blog-card" data-cat="hurricane">
+                    <img src="https://images.pexels.com/photos/8031881/pexels-photo-8031881.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Hurricane garage door guide" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Hurricane Prep</span>
+                        <h3><a href="hurricane-rated-garage-doors-complete-guide.html">Hurricane-Rated Garage Doors: The Complete South Florida Guide</a></h3>
+                        <p>Wind load ratings, impact resistance, insurance savings, and Florida Building Code requirements explained.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 8, 2026</span><span><i class="fas fa-clock"></i> 9 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 5 -->
+                <div class="blog-card" data-cat="smart-home">
+                    <img src="https://images.pexels.com/photos/8134845/pexels-photo-8134845.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Smart garage door openers" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Smart Home</span>
+                        <h3><a href="smart-garage-door-openers-guide.html">Smart Garage Door Openers: WiFi, App Control & Home Automation</a></h3>
+                        <p>Everything you need to know about LiftMaster myQ, Chamberlain, and other smart opener systems for modern living.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 5, 2026</span><span><i class="fas fa-clock"></i> 7 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 6 -->
+                <div class="blog-card" data-cat="buying-guide">
+                    <img src="https://images.pexels.com/photos/129112/pexels-photo-129112.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Garage door cost guide" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Buying Guide</span>
+                        <h3><a href="garage-door-cost-guide.html">How Much Does a New Garage Door Cost in 2026?</a></h3>
+                        <p>A transparent breakdown of garage door prices by material, style, and features — plus what affects your total cost.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 3, 2026</span><span><i class="fas fa-clock"></i> 8 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 7 -->
+                <div class="blog-card" data-cat="repair">
+                    <img src="https://images.pexels.com/photos/28453365/pexels-photo-28453365.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Garage door troubleshooting" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Repair</span>
+                        <h3><a href="garage-door-wont-open-troubleshooting.html">Garage Door Won't Open? 10 Common Causes and Fixes</a></h3>
+                        <p>Step-by-step troubleshooting guide for when your garage door refuses to budge — from dead remotes to broken springs.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 28, 2026</span><span><i class="fas fa-clock"></i> 7 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 8 -->
+                <div class="blog-card" data-cat="style">
+                    <img src="https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Garage door styles 2026" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Style & Design</span>
+                        <h3><a href="garage-door-design-trends-2026.html">Top Garage Door Design Trends for 2026</a></h3>
+                        <p>From full-view glass panels to matte black finishes, discover the hottest garage door trends sweeping South Florida.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 25, 2026</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 9 -->
+                <div class="blog-card" data-cat="buying-guide">
+                    <img src="https://images.pexels.com/photos/8186510/pexels-photo-8186510.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Steel vs wood vs aluminum" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Buying Guide</span>
+                        <h3><a href="steel-vs-wood-vs-aluminum-garage-doors.html">Steel vs. Wood vs. Aluminum Garage Doors: Which Is Best?</a></h3>
+                        <p>An honest comparison of the three most popular garage door materials — durability, cost, maintenance, and curb appeal.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 22, 2026</span><span><i class="fas fa-clock"></i> 8 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 10 -->
+                <div class="blog-card" data-cat="maintenance">
+                    <img src="https://images.pexels.com/photos/4682081/pexels-photo-4682081.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Garage door lubrication" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Maintenance</span>
+                        <h3><a href="how-to-lubricate-garage-door.html">How to Properly Lubricate Your Garage Door (Step-by-Step)</a></h3>
+                        <p>The right products, the right spots, and the right technique — a homeowner's guide to keeping your door quiet and smooth.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 18, 2026</span><span><i class="fas fa-clock"></i> 5 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 11 -->
+                <div class="blog-card" data-cat="repair">
+                    <img src="https://images.pexels.com/photos/8031881/pexels-photo-8031881.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Garage door repair vs replace" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Repair</span>
+                        <h3><a href="repair-or-replace-garage-door.html">Should You Repair or Replace Your Garage Door?</a></h3>
+                        <p>A practical decision framework to help you determine when a repair makes sense and when it's time for a new door.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 15, 2026</span><span><i class="fas fa-clock"></i> 7 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 12 -->
+                <div class="blog-card" data-cat="hurricane">
+                    <img src="https://images.pexels.com/photos/8134845/pexels-photo-8134845.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Wind mitigation inspection" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Hurricane Prep</span>
+                        <h3><a href="wind-mitigation-inspection-save-insurance.html">How a Wind Mitigation Inspection Can Save You Hundreds on Insurance</a></h3>
+                        <p>Understanding Florida's wind mitigation discounts and how a hurricane-rated garage door can lower your premiums.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 12, 2026</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 13 -->
+                <div class="blog-card" data-cat="buying-guide">
+                    <img src="https://images.pexels.com/photos/129112/pexels-photo-129112.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Belt vs chain drive opener" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Buying Guide</span>
+                        <h3><a href="belt-drive-vs-chain-drive-opener.html">Belt Drive vs. Chain Drive Garage Door Openers: The Complete Comparison</a></h3>
+                        <p>Noise levels, durability, cost, and performance — which opener type is right for your home?</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 8, 2026</span><span><i class="fas fa-clock"></i> 7 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 14 -->
+                <div class="blog-card" data-cat="maintenance">
+                    <img src="https://images.pexels.com/photos/28453365/pexels-photo-28453365.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Garage door safety" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Maintenance</span>
+                        <h3><a href="garage-door-safety-tips-families.html">Garage Door Safety: 8 Essential Tips Every Family Should Know</a></h3>
+                        <p>Protect your children, pets, and property with these critical garage door safety practices and sensor tests.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 5, 2026</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 15 -->
+                <div class="blog-card" data-cat="style">
+                    <img src="https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Curb appeal garage door" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Style & Design</span>
+                        <h3><a href="boost-curb-appeal-garage-door.html">How a New Garage Door Can Instantly Boost Your Home's Curb Appeal</a></h3>
+                        <p>Your garage door makes up 30% of your home's facade. Here's how to make it work for you, not against you.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 1, 2026</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 16 -->
+                <div class="blog-card" data-cat="repair">
+                    <img src="https://images.pexels.com/photos/8186510/pexels-photo-8186510.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Noisy garage door fixes" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Repair</span>
+                        <h3><a href="why-is-my-garage-door-so-noisy.html">Why Is My Garage Door So Noisy? Causes and Solutions</a></h3>
+                        <p>Grinding, squeaking, rattling, or banging — diagnose the noise and learn whether it's a quick fix or a bigger issue.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Jan 28, 2026</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 17 -->
+                <div class="blog-card" data-cat="buying-guide">
+                    <img src="https://images.pexels.com/photos/4682081/pexels-photo-4682081.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Insulated garage doors" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Buying Guide</span>
+                        <h3><a href="insulated-vs-non-insulated-garage-doors.html">Insulated vs. Non-Insulated Garage Doors: Is the Upgrade Worth It?</a></h3>
+                        <p>R-values, energy savings, noise reduction, and durability — the real benefits of insulated garage doors in Florida.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Jan 24, 2026</span><span><i class="fas fa-clock"></i> 7 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 18 -->
+                <div class="blog-card" data-cat="smart-home">
+                    <img src="https://images.pexels.com/photos/8134845/pexels-photo-8134845.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Garage door security" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Smart Home</span>
+                        <h3><a href="garage-door-security-smart-features.html">Garage Door Security: Smart Features That Protect Your Home</a></h3>
+                        <p>Auto-close timers, smartphone alerts, rolling codes, and camera integration — modern security for your biggest opening.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Jan 20, 2026</span><span><i class="fas fa-clock"></i> 7 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 19 -->
+                <div class="blog-card" data-cat="hurricane">
+                    <img src="https://images.pexels.com/photos/8031881/pexels-photo-8031881.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Garage door hurricane prep" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Hurricane Prep</span>
+                        <h3><a href="prepare-garage-door-hurricane-season.html">How to Prepare Your Garage Door for Hurricane Season</a></h3>
+                        <p>A step-by-step guide to inspecting, reinforcing, and storm-proofing your garage door before the first storm hits.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Jan 15, 2026</span><span><i class="fas fa-clock"></i> 8 min read</span></div>
+                    </div>
+                </div>
+
+                <!-- Post 20 -->
+                <div class="blog-card" data-cat="buying-guide">
+                    <img src="https://images.pexels.com/photos/129112/pexels-photo-129112.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&fit=crop" alt="Garage door ROI" loading="lazy">
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Buying Guide</span>
+                        <h3><a href="garage-door-roi-home-value.html">Garage Door ROI: Why It's the #1 Home Improvement for Resale Value</a></h3>
+                        <p>According to Remodeling Magazine, a new garage door recoups up to 194% of its cost. Here's why — and how to maximize yours.</p>
+                        <div class="blog-meta"><span><i class="fas fa-calendar"></i> Jan 10, 2026</span><span><i class="fas fa-clock"></i> 6 min read</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Get Expert Garage Door Tips in Your Inbox</h2>
+            <p>Join thousands of South Florida homeowners who get our monthly maintenance tips, storm prep alerts, and exclusive offers.</p>
+            <div style="max-width:500px;margin:20px auto 0;display:flex;gap:10px;">
+                <input type="email" placeholder="Your email address" style="flex:1;padding:14px 20px;border:none;border-radius:50px;font-size:1rem;font-family:'Open Sans',sans-serif;">
+                <button class="btn btn-primary" style="border-radius:50px;white-space:nowrap;">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="../index.html" class="logo footer-logo">
+                        <span class="logo-icon"><i class="fas fa-warehouse"></i></span>
+                        <div class="logo-text"><span class="logo-name">ProTeam</span><span class="logo-tagline">Garage Door</span></div>
+                    </a>
+                    <p>South Florida's trusted garage door experts. Over 20 years of quality installations, repairs, and hurricane protection across Broward and Palm Beach County.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                        <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="../services/garage-door-installation.html">Garage Door Installation</a>
+                    <a href="../services/garage-door-repair.html">Garage Door Repair</a>
+                    <a href="../services/garage-door-openers.html">Opener Systems</a>
+                    <a href="../services/spring-replacement.html">Spring Replacement</a>
+                    <a href="../services/hurricane-garage-doors.html">Hurricane-Rated Doors</a>
+                    <a href="../services/commercial-garage-doors.html">Commercial Doors</a>
+                    <a href="../services/garage-door-maintenance.html">Maintenance</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="../faq.html">FAQ &amp; Support</a>
+                    <a href="../financing.html">Financing</a>
+                    <a href="../specials.html">Specials &amp; Coupons</a>
+                    <a href="index.html">Blog</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+19545551234">(954) 555-1234</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@proteamgaragedoor.com">info@proteamgaragedoor.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Serving Broward & Palm Beach County</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 7AM-7PM | Emergency 24/7</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ProTeam Garage Door. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="../sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="tel:+19545551234" class="floating-cta" aria-label="Call us"><i class="fas fa-phone"></i></a>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+    // Blog category filter
+    document.querySelectorAll('.blog-cat-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.blog-cat-btn').forEach(function(b) { b.classList.remove('active'); });
+            this.classList.add('active');
+            var cat = this.dataset.cat;
+            document.querySelectorAll('.blog-card').forEach(function(card) {
+                card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+            });
+        });
+    });
+    </script>
+    <script src="../js/main.js"></script>
+    <script src="../js/chatbot.js"></script>
+</body>
+</html>

@@ -184,6 +184,60 @@
                         <li><strong>Get your new door installed</strong> — our in-house team handles professional installation, typically within days of approval.</li>
                     </ol>
 
+                    <h2>Monthly Payment Calculator</h2>
+                    <p>Use our calculator to estimate your monthly payments. Adjust the project amount and term to see what fits your budget.</p>
+                    <div id="finance-calc" style="background:var(--lighter-gray);border-radius:16px;padding:2rem;margin:1.5rem 0;">
+                        <div style="margin-bottom:1.5rem;">
+                            <label style="font-weight:700;font-family:'Montserrat',sans-serif;display:block;margin-bottom:8px;">Project Total: $<span id="calc-amount-display">3000</span></label>
+                            <input type="range" id="calc-amount" min="1000" max="10000" step="250" value="3000" style="width:100%;accent-color:#2ECC71;height:8px;">
+                            <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--gray);margin-top:4px;"><span>$1,000</span><span>$10,000</span></div>
+                        </div>
+                        <div style="margin-bottom:1.5rem;">
+                            <label style="font-weight:700;font-family:'Montserrat',sans-serif;display:block;margin-bottom:8px;">Financing Term</label>
+                            <div style="display:flex;gap:8px;flex-wrap:wrap;" id="calc-terms">
+                                <button class="calc-term-btn active" data-months="12" style="padding:10px 20px;border-radius:50px;border:2px solid #2ECC71;background:#2ECC71;color:#fff;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.85rem;">12 months</button>
+                                <button class="calc-term-btn" data-months="18" style="padding:10px 20px;border-radius:50px;border:2px solid #2ECC71;background:#fff;color:#1A6B52;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.85rem;">18 months</button>
+                                <button class="calc-term-btn" data-months="24" style="padding:10px 20px;border-radius:50px;border:2px solid #2ECC71;background:#fff;color:#1A6B52;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.85rem;">24 months</button>
+                                <button class="calc-term-btn" data-months="36" style="padding:10px 20px;border-radius:50px;border:2px solid #2ECC71;background:#fff;color:#1A6B52;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.85rem;">36 months</button>
+                                <button class="calc-term-btn" data-months="60" style="padding:10px 20px;border-radius:50px;border:2px solid #2ECC71;background:#fff;color:#1A6B52;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:0.85rem;">60 months</button>
+                            </div>
+                        </div>
+                        <div style="background:#fff;border-radius:12px;padding:1.5rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                            <div style="font-size:0.85rem;color:var(--gray);margin-bottom:4px;">Estimated Monthly Payment</div>
+                            <div id="calc-payment" style="font-size:2.8rem;font-weight:900;color:#0F4C3A;font-family:'Montserrat',sans-serif;">$250</div>
+                            <div style="font-size:0.8rem;color:var(--gray);margin-top:4px;">at 0% interest for <span id="calc-term-display">12</span> months*</div>
+                            <div style="margin-top:1rem;"><a href="contact.html" class="btn btn-primary">Apply for Financing</a></div>
+                        </div>
+                        <p style="font-size:0.75rem;color:var(--gray);margin-top:1rem;font-style:italic;">*0% interest available on qualifying purchases when paid in full within the promotional period. Actual terms depend on creditworthiness. This calculator is for estimation purposes only.</p>
+                    </div>
+                    <script>
+                    (function(){
+                        const slider = document.getElementById('calc-amount');
+                        const amountDisp = document.getElementById('calc-amount-display');
+                        const paymentDisp = document.getElementById('calc-payment');
+                        const termDisp = document.getElementById('calc-term-display');
+                        const termBtns = document.querySelectorAll('.calc-term-btn');
+                        let months = 12;
+                        function update(){
+                            const amt = parseInt(slider.value);
+                            amountDisp.textContent = amt.toLocaleString();
+                            const monthly = Math.ceil(amt / months);
+                            paymentDisp.textContent = '$' + monthly.toLocaleString();
+                            termDisp.textContent = months;
+                        }
+                        slider.addEventListener('input', update);
+                        termBtns.forEach(btn => {
+                            btn.addEventListener('click', function(){
+                                termBtns.forEach(b => { b.style.background='#fff'; b.style.color='#1A6B52'; });
+                                this.style.background='#2ECC71'; this.style.color='#fff';
+                                months = parseInt(this.dataset.months);
+                                update();
+                            });
+                        });
+                        update();
+                    })();
+                    </script>
+
                     <h2>Financing FAQ</h2>
                     <p><strong>What credit score is needed?</strong><br>Most applicants with fair to good credit are approved. We encourage you to apply — there's no obligation and the inquiry is quick.</p>
                     <p><strong>Is there a minimum purchase?</strong><br>Financing is available on garage door installations of $1,000 or more.</p>

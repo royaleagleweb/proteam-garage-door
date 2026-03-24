@@ -256,10 +256,61 @@
     };
 
     var FALLBACK = {
-        text: "I'm not sure I understand that. Let me connect you with the right resource. You can:\n\n" +
-              "- Call us at " + BUSINESS_PHONE + " to speak with a team member\n" +
-              "- Or choose from the options below.",
-        options: ['Get a free estimate', 'Services we offer', 'Emergency repair', 'Hours & contact info']
+        text: "I'm not quite sure about that one. Let me help you another way:",
+        options: ['Talk to a live agent', 'Get a free estimate', 'Services we offer', 'Emergency repair']
+    };
+
+    FAQ_RESPONSES['talk to a live agent'] = {
+        text: "I'd be happy to connect you with a live team member! You have a few options:\n\n" +
+              "- Call us now at " + BUSINESS_PHONE + " (fastest)\n" +
+              "- Text us at " + BUSINESS_PHONE + "\n" +
+              "- Email " + BUSINESS_EMAIL + "\n\n" +
+              "Or fill out the form below and a team member will reach out within 15 minutes during business hours (" + BUSINESS_HOURS + ").",
+        options: ['Get a free estimate', 'Services we offer'],
+        link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19545551234' },
+        showHandoffForm: true
+    };
+
+    FAQ_RESPONSES['take the door quiz'] = {
+        text: "Great idea! Our quiz helps you find the perfect garage door style for your home in just 60 seconds.",
+        options: ['Get a free estimate', 'Door styles'],
+        link: { text: 'Take the Door Quiz', url: 'quiz.html' }
+    };
+
+    FAQ_RESPONSES['diagnose my door'] = {
+        text: "Our diagnostic tool can help identify what's wrong with your garage door. Answer a few quick questions and get a diagnosis with recommended next steps.",
+        options: ['Emergency repair', 'Door repair'],
+        link: { text: 'Start Diagnosis', url: 'diagnostic.html' }
+    };
+
+    FAQ_RESPONSES['hurricane prep'] = {
+        text: "Hurricane season in South Florida runs June 1 through November 30. Our hurricane prep page includes a storm-readiness checklist and countdown timer. Make sure your garage door is ready!",
+        options: ['Hurricane doors', 'Get a free estimate'],
+        link: { text: 'Hurricane Prep Checklist', url: 'hurricane-prep.html' }
+    };
+
+    FAQ_RESPONSES['meet the team'] = {
+        text: "Want to know who'll be working on your garage door? Meet our experienced, certified team of professionals!",
+        options: ['Get a free estimate', 'Services we offer'],
+        link: { text: 'Meet Our Team', url: 'team.html' }
+    };
+
+    FAQ_RESPONSES['blog'] = {
+        text: "Check out our resource center for helpful articles about garage door maintenance, buying guides, troubleshooting tips, and more!",
+        options: ['Get a free estimate', 'Services we offer'],
+        link: { text: 'Visit Our Blog', url: 'blog/index.html' }
+    };
+
+    // Update greeting with new options
+    FAQ_RESPONSES.greeting = {
+        text: "Hi there! I'm the ProTeam virtual assistant. I can help you with estimates, troubleshooting, finding the right door, and more. What can I do for you?",
+        options: [
+            'Get a free estimate',
+            'Diagnose my door',
+            'Take the door quiz',
+            'Emergency repair',
+            'Talk to a live agent'
+        ]
     };
 
     // Resolve relative URLs based on page depth
@@ -355,6 +406,35 @@
                     linkEl.innerHTML = '<i class="fas fa-arrow-right"></i> ' + response.link.text;
                 }
                 wrapper.appendChild(linkEl);
+            }
+
+            if (response.showHandoffForm) {
+                var formDiv = document.createElement('div');
+                formDiv.style.cssText = 'margin-top:10px;background:#f0faf5;border-radius:10px;padding:12px;';
+                formDiv.innerHTML =
+                    '<input type="text" placeholder="Your name" style="width:100%;padding:8px 12px;border:1.5px solid #D5E0DA;border-radius:8px;margin-bottom:6px;font-size:0.85rem;font-family:Open Sans,sans-serif;">' +
+                    '<input type="tel" placeholder="Phone number" style="width:100%;padding:8px 12px;border:1.5px solid #D5E0DA;border-radius:8px;margin-bottom:6px;font-size:0.85rem;font-family:Open Sans,sans-serif;">' +
+                    '<textarea placeholder="Brief description of your need" rows="2" style="width:100%;padding:8px 12px;border:1.5px solid #D5E0DA;border-radius:8px;margin-bottom:8px;font-size:0.85rem;font-family:Open Sans,sans-serif;resize:none;"></textarea>' +
+                    '<button style="width:100%;padding:10px;background:#2ECC71;color:#fff;border:none;border-radius:8px;font-weight:700;font-family:Montserrat,sans-serif;cursor:pointer;font-size:0.85rem;">Request Callback</button>';
+                var submitBtn = formDiv.querySelector('button');
+                submitBtn.addEventListener('click', function() {
+                    var inputs = formDiv.querySelectorAll('input,textarea');
+                    var name = inputs[0].value.trim();
+                    var phone = inputs[1].value.trim();
+                    if (!name || !phone) { submitBtn.textContent = 'Please enter name & phone'; return; }
+                    submitBtn.textContent = 'Request Sent!';
+                    submitBtn.style.background = '#0F4C3A';
+                    submitBtn.disabled = true;
+                    inputs.forEach(function(el) { el.disabled = true; });
+                    setTimeout(function() {
+                        addBotMessage({
+                            text: "Thanks, " + name + "! A team member will call you at " + phone + " within 15 minutes during business hours. For immediate help, call us directly.",
+                            options: ['Services we offer', 'Get a free estimate'],
+                            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19545551234' }
+                        });
+                    }, 500);
+                });
+                wrapper.appendChild(formDiv);
             }
 
             if (response.options && response.options.length) {
@@ -471,7 +551,34 @@
                 'hello': 'greeting',
                 'hi': 'greeting',
                 'hey': 'greeting',
-                'help': 'greeting'
+                'help': 'greeting',
+                'quiz': 'take the door quiz',
+                'which door': 'take the door quiz',
+                'right door': 'take the door quiz',
+                'diagnos': 'diagnose my door',
+                'what\'s wrong': 'diagnose my door',
+                'problem': 'diagnose my door',
+                'issue': 'diagnose my door',
+                'noise': 'door won\'t open',
+                'loud': 'door won\'t open',
+                'team': 'meet the team',
+                'who': 'meet the team',
+                'technician': 'meet the team',
+                'blog': 'blog',
+                'article': 'blog',
+                'guide': 'blog',
+                'tip': 'blog',
+                'hurricane prep': 'hurricane prep',
+                'checklist': 'hurricane prep',
+                'season': 'hurricane prep',
+                'live': 'talk to a live agent',
+                'agent': 'talk to a live agent',
+                'person': 'talk to a live agent',
+                'human': 'talk to a live agent',
+                'speak': 'talk to a live agent',
+                'talk': 'talk to a live agent',
+                'callback': 'talk to a live agent',
+                'call me': 'talk to a live agent'
             };
 
             for (var key in keywords) {

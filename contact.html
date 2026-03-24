@@ -218,78 +218,120 @@
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contact-form">
                         <h3>Request Your Free Estimate</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="first-name">First Name *</label>
-                                <input type="text" id="first-name" name="first-name" required placeholder="John">
-                            </div>
-                            <div class="form-group">
-                                <label for="last-name">Last Name *</label>
-                                <input type="text" id="last-name" name="last-name" required placeholder="Doe">
-                            </div>
+                        <!-- Progress Bar -->
+                        <div style="display:flex;gap:4px;margin-bottom:1.5rem;">
+                            <div class="msf-progress-bar active" style="flex:1;height:4px;border-radius:4px;background:#D5E0DA;transition:background 0.3s;"></div>
+                            <div class="msf-progress-bar" style="flex:1;height:4px;border-radius:4px;background:#D5E0DA;transition:background 0.3s;"></div>
+                            <div class="msf-progress-bar" style="flex:1;height:4px;border-radius:4px;background:#D5E0DA;transition:background 0.3s;"></div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        <!-- Step 1: Service Selection -->
+                        <div class="msf-step" id="msf-step-1">
+                            <p style="font-weight:600;margin-bottom:1rem;color:var(--primary);">Step 1 of 3 — What do you need?</p>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                                <button type="button" class="msf-service-btn" data-value="new-installation" style="display:flex;align-items:center;gap:10px;padding:14px 16px;border:2px solid #D5E0DA;border-radius:10px;background:#fff;cursor:pointer;font-size:0.9rem;font-family:'Open Sans',sans-serif;transition:all 0.2s;text-align:left;"><i class="fas fa-plus-circle" style="color:#2ECC71;font-size:1.2rem;width:24px;"></i> New Door Installation</button>
+                                <button type="button" class="msf-service-btn" data-value="repair" style="display:flex;align-items:center;gap:10px;padding:14px 16px;border:2px solid #D5E0DA;border-radius:10px;background:#fff;cursor:pointer;font-size:0.9rem;font-family:'Open Sans',sans-serif;transition:all 0.2s;text-align:left;"><i class="fas fa-wrench" style="color:#2ECC71;font-size:1.2rem;width:24px;"></i> Garage Door Repair</button>
+                                <button type="button" class="msf-service-btn" data-value="opener" style="display:flex;align-items:center;gap:10px;padding:14px 16px;border:2px solid #D5E0DA;border-radius:10px;background:#fff;cursor:pointer;font-size:0.9rem;font-family:'Open Sans',sans-serif;transition:all 0.2s;text-align:left;"><i class="fas fa-microchip" style="color:#2ECC71;font-size:1.2rem;width:24px;"></i> Opener System</button>
+                                <button type="button" class="msf-service-btn" data-value="spring" style="display:flex;align-items:center;gap:10px;padding:14px 16px;border:2px solid #D5E0DA;border-radius:10px;background:#fff;cursor:pointer;font-size:0.9rem;font-family:'Open Sans',sans-serif;transition:all 0.2s;text-align:left;"><i class="fas fa-compress-arrows-alt" style="color:#2ECC71;font-size:1.2rem;width:24px;"></i> Spring Replacement</button>
+                                <button type="button" class="msf-service-btn" data-value="hurricane" style="display:flex;align-items:center;gap:10px;padding:14px 16px;border:2px solid #D5E0DA;border-radius:10px;background:#fff;cursor:pointer;font-size:0.9rem;font-family:'Open Sans',sans-serif;transition:all 0.2s;text-align:left;"><i class="fas fa-hurricane" style="color:#2ECC71;font-size:1.2rem;width:24px;"></i> Hurricane Door</button>
+                                <button type="button" class="msf-service-btn" data-value="commercial" style="display:flex;align-items:center;gap:10px;padding:14px 16px;border:2px solid #D5E0DA;border-radius:10px;background:#fff;cursor:pointer;font-size:0.9rem;font-family:'Open Sans',sans-serif;transition:all 0.2s;text-align:left;"><i class="fas fa-building" style="color:#2ECC71;font-size:1.2rem;width:24px;"></i> Commercial Door</button>
+                                <button type="button" class="msf-service-btn" data-value="maintenance" style="display:flex;align-items:center;gap:10px;padding:14px 16px;border:2px solid #D5E0DA;border-radius:10px;background:#fff;cursor:pointer;font-size:0.9rem;font-family:'Open Sans',sans-serif;transition:all 0.2s;text-align:left;"><i class="fas fa-clipboard-check" style="color:#2ECC71;font-size:1.2rem;width:24px;"></i> Maintenance</button>
+                                <button type="button" class="msf-service-btn" data-value="other" style="display:flex;align-items:center;gap:10px;padding:14px 16px;border:2px solid #D5E0DA;border-radius:10px;background:#fff;cursor:pointer;font-size:0.9rem;font-family:'Open Sans',sans-serif;transition:all 0.2s;text-align:left;"><i class="fas fa-question-circle" style="color:#2ECC71;font-size:1.2rem;width:24px;"></i> Something Else</button>
                             </div>
-                            <div class="form-group">
-                                <label for="phone">Phone *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="(954) 555-1234">
-                            </div>
+                            <input type="hidden" id="service" name="service" value="">
                         </div>
-                        <div class="form-row">
+                        <!-- Step 2: Location & Timing -->
+                        <div class="msf-step" id="msf-step-2" style="display:none;">
+                            <p style="font-weight:600;margin-bottom:1rem;color:var(--primary);">Step 2 of 3 — Where and when?</p>
                             <div class="form-group">
-                                <label for="service">Service Needed</label>
-                                <select id="service" name="service">
-                                    <option value="">Select a service...</option>
-                                    <option value="new-installation">New Garage Door Installation</option>
-                                    <option value="repair">Garage Door Repair</option>
-                                    <option value="opener">Opener Installation/Repair</option>
-                                    <option value="spring">Spring Replacement</option>
-                                    <option value="hurricane">Hurricane-Rated Door</option>
-                                    <option value="commercial">Commercial Door</option>
-                                    <option value="maintenance">Maintenance/Tune-Up</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="city">Your City</label>
-                                <select id="city" name="city">
+                                <label for="city">Your City *</label>
+                                <select id="city" name="city" required>
                                     <option value="">Select your city...</option>
-                                    <option value="fort-lauderdale">Fort Lauderdale</option>
-                                    <option value="boca-raton">Boca Raton</option>
-                                    <option value="pompano-beach">Pompano Beach</option>
-                                    <option value="coral-springs">Coral Springs</option>
-                                    <option value="west-palm-beach">West Palm Beach</option>
-                                    <option value="hollywood">Hollywood</option>
-                                    <option value="plantation">Plantation</option>
-                                    <option value="davie">Davie</option>
-                                    <option value="weston">Weston</option>
-                                    <option value="deerfield-beach">Deerfield Beach</option>
-                                    <option value="delray-beach">Delray Beach</option>
-                                    <option value="boynton-beach">Boynton Beach</option>
-                                    <option value="sunrise">Sunrise</option>
-                                    <option value="parkland">Parkland</option>
-                                    <option value="coconut-creek">Coconut Creek</option>
-                                    <option value="jupiter">Jupiter</option>
-                                    <option value="palm-beach-gardens">Palm Beach Gardens</option>
-                                    <option value="wellington">Wellington</option>
-                                    <option value="margate">Margate</option>
-                                    <option value="tamarac">Tamarac</option>
-                                    <option value="other">Other</option>
+                                    <option value="fort-lauderdale">Fort Lauderdale</option><option value="boca-raton">Boca Raton</option><option value="pompano-beach">Pompano Beach</option><option value="coral-springs">Coral Springs</option><option value="west-palm-beach">West Palm Beach</option><option value="hollywood">Hollywood</option><option value="plantation">Plantation</option><option value="davie">Davie</option><option value="weston">Weston</option><option value="deerfield-beach">Deerfield Beach</option><option value="delray-beach">Delray Beach</option><option value="boynton-beach">Boynton Beach</option><option value="sunrise">Sunrise</option><option value="parkland">Parkland</option><option value="coconut-creek">Coconut Creek</option><option value="jupiter">Jupiter</option><option value="palm-beach-gardens">Palm Beach Gardens</option><option value="wellington">Wellington</option><option value="margate">Margate</option><option value="tamarac">Tamarac</option><option value="other">Other</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label>How urgent is this?</label>
+                                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                    <button type="button" class="msf-urgency-btn" data-value="emergency" style="padding:10px 18px;border:2px solid #e74c3c;border-radius:50px;background:#fff;color:#e74c3c;font-weight:700;cursor:pointer;font-size:0.85rem;font-family:'Montserrat',sans-serif;transition:all 0.2s;"><i class="fas fa-exclamation-triangle"></i> Emergency</button>
+                                    <button type="button" class="msf-urgency-btn" data-value="this-week" style="padding:10px 18px;border:2px solid #f39c12;border-radius:50px;background:#fff;color:#f39c12;font-weight:700;cursor:pointer;font-size:0.85rem;font-family:'Montserrat',sans-serif;transition:all 0.2s;"><i class="fas fa-clock"></i> This Week</button>
+                                    <button type="button" class="msf-urgency-btn" data-value="flexible" style="padding:10px 18px;border:2px solid #2ECC71;border-radius:50px;background:#fff;color:#1A6B52;font-weight:700;cursor:pointer;font-size:0.85rem;font-family:'Montserrat',sans-serif;transition:all 0.2s;"><i class="fas fa-calendar"></i> Flexible</button>
+                                </div>
+                                <input type="hidden" id="urgency" name="urgency" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Tell Us About Your Project</label>
+                                <textarea id="message" name="message" rows="3" placeholder="Describe your garage door needs..."></textarea>
+                            </div>
+                            <div style="display:flex;gap:10px;margin-top:1rem;">
+                                <button type="button" id="msf-back-2" class="btn btn-outline" style="flex:1;"><i class="fas fa-arrow-left"></i> Back</button>
+                                <button type="button" id="msf-next-2" class="btn btn-primary" style="flex:2;">Continue <i class="fas fa-arrow-right"></i></button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Tell Us About Your Project</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Describe your garage door needs — type of door, issue you're experiencing, or project details..."></textarea>
+                        <!-- Step 3: Contact Info -->
+                        <div class="msf-step" id="msf-step-3" style="display:none;">
+                            <p style="font-weight:600;margin-bottom:1rem;color:var(--primary);">Step 3 of 3 — Your contact info</p>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name *</label>
+                                    <input type="text" id="first-name" name="first-name" required placeholder="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name *</label>
+                                    <input type="text" id="last-name" name="last-name" required placeholder="Doe">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="(954) 555-1234">
+                                </div>
+                            </div>
+                            <div style="display:flex;gap:10px;margin-top:1rem;">
+                                <button type="button" id="msf-back-3" class="btn btn-outline" style="flex:1;"><i class="fas fa-arrow-left"></i> Back</button>
+                                <button type="submit" class="btn btn-primary btn-full" style="flex:2;">
+                                    <i class="fas fa-paper-plane"></i> Submit Request
+                                </button>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i> Submit Request
-                        </button>
                         <p class="form-note"><i class="fas fa-lock"></i> Your information is secure and will never be shared with third parties.</p>
                     </form>
+                    <script>
+                    (function(){
+                        const steps = document.querySelectorAll('.msf-step');
+                        const bars = document.querySelectorAll('.msf-progress-bar');
+                        let current = 0;
+                        function showStep(n){
+                            steps.forEach((s,i) => s.style.display = i===n ? 'block' : 'none');
+                            bars.forEach((b,i) => b.style.background = i<=n ? '#2ECC71' : '#D5E0DA');
+                            current = n;
+                        }
+                        // Step 1: Service buttons
+                        document.querySelectorAll('.msf-service-btn').forEach(btn => {
+                            btn.addEventListener('click', function(){
+                                document.querySelectorAll('.msf-service-btn').forEach(b => { b.style.borderColor='#D5E0DA'; b.style.background='#fff'; });
+                                this.style.borderColor='#2ECC71'; this.style.background='#EDF2EF';
+                                document.getElementById('service').value = this.dataset.value;
+                                setTimeout(() => showStep(1), 300);
+                            });
+                        });
+                        // Urgency buttons
+                        document.querySelectorAll('.msf-urgency-btn').forEach(btn => {
+                            btn.addEventListener('click', function(){
+                                document.querySelectorAll('.msf-urgency-btn').forEach(b => { b.style.background='#fff'; });
+                                this.style.background = this.dataset.value==='emergency' ? '#fdf2f2' : this.dataset.value==='this-week' ? '#fef9e7' : '#eafaf1';
+                                document.getElementById('urgency').value = this.dataset.value;
+                            });
+                        });
+                        // Navigation
+                        document.getElementById('msf-back-2').addEventListener('click', () => showStep(0));
+                        document.getElementById('msf-next-2').addEventListener('click', () => showStep(2));
+                        document.getElementById('msf-back-3').addEventListener('click', () => showStep(1));
+                    })();
+                    </script>
                 </div>
             </div>
         </div>
