@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Is your garage door ready for hurricane season? Use our countdown timer, storm-readiness checklist, and preparation guide to protect your South Florida home.">
+    <title>Hurricane Prep Checklist & Countdown | ProTeam Garage Door</title>
+    <link rel="canonical" href="https://royaleagleweb.github.io/proteam-garage-door/hurricane-prep.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <style>
+        .countdown-section { background: linear-gradient(135deg, #0A3328, #0F4C3A); padding: 60px 0; color: #fff; text-align: center; }
+        .countdown-status { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 600; color: #58D68D; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 2px; }
+        .countdown-title { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 900; margin-bottom: 32px; }
+        .countdown-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .countdown-box { background: rgba(255,255,255,0.1); border: 2px solid rgba(46,204,113,0.3); border-radius: 16px; padding: 24px 20px; min-width: 120px; }
+        .countdown-num { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; color: #2ECC71; display: block; line-height: 1; }
+        .countdown-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+        .countdown-active { background: linear-gradient(135deg, #e74c3c, #c0392b); padding: 60px 0; color: #fff; text-align: center; }
+        .countdown-active .countdown-status { color: #ffd700; }
+        .countdown-active .countdown-box { border-color: rgba(255,255,255,0.3); }
+        .countdown-active .countdown-num { color: #ffd700; }
+
+        .checklist-section { padding: 60px 0; }
+        .checklist-header { text-align: center; margin-bottom: 40px; }
+        .checklist-progress { max-width: 600px; margin: 0 auto 30px; }
+        .checklist-progress-bar { height: 12px; background: #D5E0DA; border-radius: 50px; overflow: hidden; }
+        .checklist-progress-fill { height: 100%; background: linear-gradient(90deg, #2ECC71, #27AE60); border-radius: 50px; transition: width 0.5s ease; width: 0%; }
+        .checklist-score { text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: #0F4C3A; margin-top: 10px; }
+        .checklist-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .checklist-item { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; background: #fff; border: 2px solid #D5E0DA; border-radius: 12px; cursor: pointer; transition: all 0.2s; }
+        .checklist-item:hover { border-color: #2ECC71; }
+        .checklist-item.checked { border-color: #2ECC71; background: #f0faf5; }
+        .checklist-check { width: 28px; height: 28px; border: 2px solid #D5E0DA; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; color: transparent; font-size: 0.9rem; }
+        .checklist-item.checked .checklist-check { background: #2ECC71; border-color: #2ECC71; color: #fff; }
+        .checklist-item-text strong { display: block; color: #0D1B16; font-size: 0.95rem; }
+        .checklist-item-text span { font-size: 0.85rem; color: #5F7A6E; }
+
+        .timeline-section { background: #EDF2EF; padding: 60px 0; }
+        .timeline-grid { max-width: 800px; margin: 40px auto 0; }
+        .timeline-block { display: flex; gap: 24px; margin-bottom: 32px; }
+        .timeline-marker { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+        .timeline-badge { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 0.8rem; color: #fff; }
+        .timeline-badge.t72 { background: #2ECC71; }
+        .timeline-badge.t48 { background: #f39c12; }
+        .timeline-badge.t24 { background: #e74c3c; }
+        .timeline-line { width: 3px; flex: 1; background: #D5E0DA; margin-top: 8px; }
+        .timeline-content { padding-bottom: 16px; }
+        .timeline-content h3 { font-size: 1.15rem; margin-bottom: 8px; color: #0D1B16; }
+        .timeline-content ul { list-style: none; padding: 0; }
+        .timeline-content li { padding: 4px 0 4px 20px; position: relative; font-size: 0.9rem; color: #5F7A6E; }
+        .timeline-content li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: #2ECC71; font-size: 0.75rem; }
+
+        .stats-section { padding: 60px 0; }
+        .stats-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 900px; margin: 40px auto 0; }
+        .stat-card { background: #fff; border-radius: 16px; padding: 28px 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .stat-card i { font-size: 2rem; color: #2ECC71; margin-bottom: 12px; }
+        .stat-card .stat-val { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900; color: #0F4C3A; }
+        .stat-card .stat-desc { font-size: 0.85rem; color: #5F7A6E; margin-top: 4px; }
+
+        @media (max-width: 768px) {
+            .countdown-grid { gap: 12px; }
+            .countdown-box { min-width: 80px; padding: 16px 12px; }
+            .countdown-num { font-size: 2rem; }
+            .stats-cards { grid-template-columns: repeat(2, 1fr); }
+            .timeline-block { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fas fa-map-marker-alt"></i> Serving Broward & Palm Beach County</span>
+                <span><i class="fas fa-clock"></i> Mon-Sat: 7AM - 7PM | Emergency 24/7</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:+19545551234"><i class="fas fa-phone"></i> (954) 555-1234</a>
+                <div class="top-bar-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Google"><i class="fab fa-google"></i></a><a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-warehouse"></i></span><div class="logo-text"><span class="logo-name">ProTeam</span><span class="logo-tagline">Garage Door</span></div></a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown"><a href="index.html#services" class="nav-link nav-dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a><div class="nav-dropdown-menu"><a href="services/garage-door-installation.html">Garage Door Installation</a><a href="services/garage-door-repair.html">Garage Door Repair</a><a href="services/garage-door-openers.html">Opener Systems</a><a href="services/spring-replacement.html">Spring Replacement</a><a href="services/hurricane-garage-doors.html">Hurricane-Rated Doors</a><a href="services/commercial-garage-doors.html">Commercial Doors</a><a href="services/garage-door-maintenance.html">Maintenance & Tune-Up</a></div></div>
+                <a href="about.html" class="nav-link">About</a>
+                <div class="nav-dropdown"><a href="#" class="nav-link nav-dropdown-toggle">More <i class="fas fa-chevron-down"></i></a><div class="nav-dropdown-menu"><a href="garage-door-styles.html">Garage Door Styles</a><a href="parts-accessories.html">Parts &amp; Accessories</a><a href="quiz.html">Door Style Quiz</a><a href="diagnostic.html">Diagnose My Door</a><a href="faq.html">FAQ &amp; Support</a><a href="financing.html">Financing</a><a href="specials.html">Specials &amp; Coupons</a><a href="hurricane-prep.html">Hurricane Prep</a><a href="team.html">Meet the Team</a><a href="blog/index.html">Blog &amp; Resources</a></div></div>
+                <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="contact.html" class="btn btn-primary header-cta">Free Estimate</a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Hurricane Prep</span></nav>
+            <h1>Hurricane <span class="highlight">Preparation Guide</span></h1>
+            <p>Is your garage door ready for storm season? Use our countdown, checklist, and action guide to protect your home.</p>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section id="countdown-section">
+        <div class="container">
+            <div class="countdown-status" id="countdown-status"></div>
+            <div class="countdown-title" id="countdown-title"></div>
+            <div class="countdown-grid">
+                <div class="countdown-box"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">Days</span></div>
+                <div class="countdown-box"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
+                <div class="countdown-box"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">Minutes</span></div>
+                <div class="countdown-box"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">Seconds</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Storm-Readiness Checklist -->
+    <section class="checklist-section">
+        <div class="container">
+            <div class="checklist-header">
+                <span class="section-badge">Interactive Checklist</span>
+                <h2>Is Your Garage Door <span class="highlight">Storm-Ready?</span></h2>
+                <p>Click each item as you verify it. How does your door score?</p>
+            </div>
+            <div class="checklist-progress">
+                <div class="checklist-progress-bar"><div class="checklist-progress-fill" id="cl-fill"></div></div>
+                <div class="checklist-score">Storm Readiness: <span id="cl-score">0</span>/10</div>
+            </div>
+            <div class="checklist-grid" id="checklist-grid">
+                <div class="checklist-item"><div class="checklist-check"><i class="fas fa-check"></i></div><div class="checklist-item-text"><strong>Hurricane-rated door installed</strong><span>Door meets Florida Building Code wind-load requirements for your zone</span></div></div>
+                <div class="checklist-item"><div class="checklist-check"><i class="fas fa-check"></i></div><div class="checklist-item-text"><strong>Wind-load certification current</strong><span>NOA (Notice of Acceptance) documentation is on file and up to date</span></div></div>
+                <div class="checklist-item"><div class="checklist-check"><i class="fas fa-check"></i></div><div class="checklist-item-text"><strong>Reinforcement bracing inspected</strong><span>Horizontal and vertical bracing is secure with no loose bolts or rust</span></div></div>
+                <div class="checklist-item"><div class="checklist-check"><i class="fas fa-check"></i></div><div class="checklist-item-text"><strong>Weatherstripping intact</strong><span>Side and top seals are flexible, uncracked, and making full contact</span></div></div>
+                <div class="checklist-item"><div class="checklist-check"><i class="fas fa-check"></i></div><div class="checklist-item-text"><strong>Bottom seal in good condition</strong><span>Rubber bottom seal is not cracked, torn, or allowing daylight through</span></div></div>
+                <div class="checklist-item"><div class="checklist-check"><i class="fas fa-check"></i></div><div class="checklist-item-text"><strong>Tracks aligned and lubricated</strong><span>Tracks are plumb, clean, and rollers move freely without grinding</span></div></div>
+                <div class="checklist-item"><div class="checklist-check"><i class="fas fa-check"></i></div><div class="checklist-item-text"><strong>Springs tested and balanced</strong><span>Door stays in place when lifted halfway and released (balance test)</span></div></div>
+                <div class="checklist-item"><div class="checklist-check"><i class="fas fa-check"></i></div><div class="checklist-item-text"><strong>Opener battery backup working</strong><span>Battery backup allows door operation during power outages</span></div></div>
+                <div class="checklist-item"><div class="checklist-check"><i class="fas fa-check"></i></div><div class="checklist-item-text"><strong>Emergency release accessible</strong><span>Red emergency release handle is reachable and disengages properly</span></div></div>
+                <div class="checklist-item"><div class="checklist-check"><i class="fas fa-check"></i></div><div class="checklist-item-text"><strong>Wind mitigation inspection completed</strong><span>Certified inspector has documented your door for insurance discounts</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before the Storm Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <span class="section-badge">Action Plan</span>
+                <h2>Before the <span class="highlight">Storm Hits</span></h2>
+                <p>A step-by-step timeline for preparing your garage door when a hurricane is approaching.</p>
+            </div>
+            <div class="timeline-grid">
+                <div class="timeline-block">
+                    <div class="timeline-marker"><div class="timeline-badge t72">72 HR</div><div class="timeline-line"></div></div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-calendar-check" style="color:#2ECC71;margin-right:8px;"></i> 72 Hours Before</h3>
+                        <ul>
+                            <li>Inspect all weatherstripping and bottom seals for cracks or gaps</li>
+                            <li>Test the door balance — lift halfway and release; it should stay put</li>
+                            <li>Lubricate rollers, hinges, springs, and tracks with silicone spray</li>
+                            <li>Check that the opener's battery backup is charged and functioning</li>
+                            <li>Verify your emergency release handle works and you know how to use it</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-block">
+                    <div class="timeline-marker"><div class="timeline-badge t48">48 HR</div><div class="timeline-line"></div></div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-tools" style="color:#f39c12;margin-right:8px;"></i> 48 Hours Before</h3>
+                        <ul>
+                            <li>Install hurricane bracing kit if your door is not wind-rated</li>
+                            <li>Tighten all track brackets, hinge bolts, and mounting hardware</li>
+                            <li>Clear the garage of items that could become projectiles if door fails</li>
+                            <li>Move vehicles inside the garage or to a protected parking structure</li>
+                            <li>Take photos of your garage door for insurance documentation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-block">
+                    <div class="timeline-marker"><div class="timeline-badge t24">24 HR</div></div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-exclamation-triangle" style="color:#e74c3c;margin-right:8px;"></i> 24 Hours Before</h3>
+                        <ul>
+                            <li>Lock the garage door in the closed position using the manual lock</li>
+                            <li>Disconnect the automatic opener to prevent wind-triggered openings</li>
+                            <li>Place sandbags along the bottom seal if flooding is expected</li>
+                            <li>Ensure you have flashlights, tools, and emergency supplies accessible</li>
+                            <li>Know your evacuation route and have your insurance info ready</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Hurricane Doors Matter -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <span class="section-badge">By the Numbers</span>
+                <h2>Why Hurricane-Rated Doors <span class="highlight">Matter</span></h2>
+            </div>
+            <div class="stats-cards">
+                <div class="stat-card"><i class="fas fa-wind"></i><div class="stat-val">180+</div><div class="stat-desc">MPH wind resistance</div></div>
+                <div class="stat-card"><i class="fas fa-piggy-bank"></i><div class="stat-val">$500+</div><div class="stat-desc">Annual insurance savings</div></div>
+                <div class="stat-card"><i class="fas fa-chart-line"></i><div class="stat-val">194%</div><div class="stat-desc">Return on investment</div></div>
+                <div class="stat-card"><i class="fas fa-shield-halved"></i><div class="stat-val">#1</div><div class="stat-desc">Vulnerable home opening</div></div>
+            </div>
+            <div style="text-align:center;margin-top:40px;">
+                <a href="services/hurricane-garage-doors.html" class="btn btn-primary btn-lg">Learn About Hurricane Doors</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Schedule a Free Hurricane Door Assessment</h2>
+            <p>Our experts will evaluate your current door and recommend the right wind-rated solution for your home.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Assessment</a>
+                <a href="tel:+19545551234" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> (954) 555-1234</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about"><a href="index.html" class="logo footer-logo"><span class="logo-icon"><i class="fas fa-warehouse"></i></span><div class="logo-text"><span class="logo-name">ProTeam</span><span class="logo-tagline">Garage Door</span></div></a><p>South Florida's trusted garage door experts. Over 20 years of quality installations, repairs, and hurricane protection.</p><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Google"><i class="fab fa-google"></i></a><a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a></div></div>
+                <div class="footer-links"><h4>Services</h4><a href="services/garage-door-installation.html">Garage Door Installation</a><a href="services/garage-door-repair.html">Garage Door Repair</a><a href="services/garage-door-openers.html">Opener Systems</a><a href="services/spring-replacement.html">Spring Replacement</a><a href="services/hurricane-garage-doors.html">Hurricane-Rated Doors</a><a href="services/commercial-garage-doors.html">Commercial Doors</a><a href="services/garage-door-maintenance.html">Maintenance</a></div>
+                <div class="footer-links"><h4>Resources</h4><a href="faq.html">FAQ &amp; Support</a><a href="financing.html">Financing</a><a href="specials.html">Specials &amp; Coupons</a><a href="blog/index.html">Blog &amp; Resources</a><a href="quiz.html">Door Style Quiz</a><a href="diagnostic.html">Diagnose My Door</a><a href="hurricane-prep.html">Hurricane Prep</a><a href="team.html">Meet the Team</a></div>
+                <div class="footer-contact"><h4>Contact Us</h4><p><i class="fas fa-phone"></i> <a href="tel:+19545551234">(954) 555-1234</a></p><p><i class="fas fa-envelope"></i> <a href="mailto:info@proteamgaragedoor.com">info@proteamgaragedoor.com</a></p><p><i class="fas fa-map-marker-alt"></i> Serving Broward & Palm Beach County</p><p><i class="fas fa-clock"></i> Mon-Sat: 7AM-7PM | Emergency 24/7</p></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 ProTeam Garage Door. All Rights Reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="sitemap.xml">Sitemap</a></div></div>
+        </div>
+    </footer>
+
+    <a href="tel:+19545551234" class="floating-cta" aria-label="Call us"><i class="fas fa-phone"></i></a>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+    // Hurricane Season Countdown
+    (function(){
+        var section = document.getElementById('countdown-section');
+        var statusEl = document.getElementById('countdown-status');
+        var titleEl = document.getElementById('countdown-title');
+        var now = new Date();
+        var year = now.getFullYear();
+        var seasonStart = new Date(year, 5, 1); // June 1
+        var seasonEnd = new Date(year, 10, 30); // Nov 30
+
+        var inSeason = now >= seasonStart && now <= seasonEnd;
+        var target;
+
+        if (inSeason) {
+            section.className = 'countdown-active';
+            statusEl.textContent = 'Hurricane Season is ACTIVE';
+            titleEl.textContent = 'Season Ends In:';
+            target = seasonEnd;
+        } else if (now < seasonStart) {
+            section.className = 'countdown-section';
+            statusEl.textContent = 'Hurricane Season Countdown';
+            titleEl.textContent = 'Season Starts In:';
+            target = seasonStart;
+        } else {
+            section.className = 'countdown-section';
+            statusEl.textContent = 'Hurricane Season Countdown';
+            titleEl.textContent = 'Next Season Starts In:';
+            target = new Date(year + 1, 5, 1);
+        }
+
+        function update() {
+            var diff = target - new Date();
+            if (diff <= 0) { location.reload(); return; }
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('cd-days').textContent = d;
+            document.getElementById('cd-hours').textContent = h;
+            document.getElementById('cd-mins').textContent = m;
+            document.getElementById('cd-secs').textContent = s;
+        }
+        update();
+        setInterval(update, 1000);
+    })();
+
+    // Checklist
+    (function(){
+        var items = document.querySelectorAll('.checklist-item');
+        var fill = document.getElementById('cl-fill');
+        var score = document.getElementById('cl-score');
+        var checked = 0;
+
+        items.forEach(function(item){
+            item.addEventListener('click', function(){
+                this.classList.toggle('checked');
+                checked = document.querySelectorAll('.checklist-item.checked').length;
+                fill.style.width = (checked / items.length * 100) + '%';
+                score.textContent = checked;
+            });
+        });
+    })();
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
