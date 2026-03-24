@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Use our free diagnostic tool to find out what's wrong with your garage door. Answer a few questions and get an instant diagnosis with recommended next steps.">
+    <title>Garage Door Diagnostic Tool | ProTeam Garage Door</title>
+    <link rel="canonical" href="https://royaleagleweb.github.io/proteam-garage-door/diagnostic.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <style>
+        .diag-container { max-width: 700px; margin: 0 auto; }
+        .diag-card { background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px; }
+        .diag-progress { display: flex; gap: 6px; margin-bottom: 28px; }
+        .diag-progress-dot { width: 12px; height: 12px; border-radius: 50%; background: #D5E0DA; transition: all 0.3s; }
+        .diag-progress-dot.active { background: #2ECC71; transform: scale(1.2); }
+        .diag-progress-dot.done { background: #0F4C3A; }
+        .diag-step-label { font-weight: 700; color: #0F4C3A; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; margin-bottom: 8px; }
+        .diag-question { font-size: 1.4rem; font-weight: 800; color: #0D1B16; font-family: 'Montserrat', sans-serif; margin-bottom: 24px; line-height: 1.3; }
+        .diag-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .diag-option { display: flex; align-items: center; gap: 12px; padding: 16px; border: 2px solid #D5E0DA; border-radius: 12px; background: #fff; cursor: pointer; font-size: 0.95rem; font-family: 'Open Sans', sans-serif; transition: all 0.2s; text-align: left; }
+        .diag-option:hover { border-color: #2ECC71; background: #f0faf5; }
+        .diag-option i { font-size: 1.3rem; color: #2ECC71; width: 28px; text-align: center; flex-shrink: 0; }
+        .diag-result { display: none; }
+        .diag-result-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+        .diag-result-icon { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; flex-shrink: 0; }
+        .diag-result-icon.emergency { background: #e74c3c; }
+        .diag-result-icon.urgent { background: #f39c12; }
+        .diag-result-icon.routine { background: #2ECC71; }
+        .urgency-badge { display: inline-block; padding: 4px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+        .urgency-badge.emergency { background: #fdf2f2; color: #e74c3c; }
+        .urgency-badge.urgent { background: #fef9e7; color: #f39c12; }
+        .urgency-badge.routine { background: #eafaf1; color: #27AE60; }
+        .diag-warning { background: #fdf2f2; border-left: 4px solid #e74c3c; padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 16px 0; font-size: 0.9rem; }
+        .diag-warning i { color: #e74c3c; margin-right: 8px; }
+        .diag-service { background: #EDF2EF; padding: 14px 18px; border-radius: 10px; margin: 16px 0; font-size: 0.9rem; }
+        .diag-service strong { color: #0F4C3A; }
+        .diag-buttons { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+        .diag-buttons .btn { flex: 1; min-width: 200px; text-align: center; }
+        .diag-restart { background: none; border: none; color: #5F7A6E; font-size: 0.9rem; cursor: pointer; margin-top: 16px; font-family: 'Open Sans', sans-serif; }
+        .diag-restart:hover { color: #0F4C3A; }
+        @media (max-width: 600px) { .diag-options { grid-template-columns: 1fr; } .diag-card { padding: 24px; } .diag-question { font-size: 1.15rem; } }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fas fa-map-marker-alt"></i> Serving Broward & Palm Beach County</span>
+                <span><i class="fas fa-clock"></i> Mon-Sat: 7AM - 7PM | Emergency 24/7</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:+19545551234"><i class="fas fa-phone"></i> (954) 555-1234</a>
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-warehouse"></i></span><div class="logo-text"><span class="logo-name">ProTeam</span><span class="logo-tagline">Garage Door</span></div></a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="index.html#services" class="nav-link nav-dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="services/garage-door-installation.html">Garage Door Installation</a>
+                        <a href="services/garage-door-repair.html">Garage Door Repair</a>
+                        <a href="services/garage-door-openers.html">Opener Systems</a>
+                        <a href="services/spring-replacement.html">Spring Replacement</a>
+                        <a href="services/hurricane-garage-doors.html">Hurricane-Rated Doors</a>
+                        <a href="services/commercial-garage-doors.html">Commercial Doors</a>
+                        <a href="services/garage-door-maintenance.html">Maintenance & Tune-Up</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="garage-door-styles.html">Garage Door Styles</a>
+                        <a href="parts-accessories.html">Parts &amp; Accessories</a>
+                        <a href="quiz.html">Door Style Quiz</a>
+                        <a href="diagnostic.html">Diagnose My Door</a>
+                        <a href="faq.html">FAQ &amp; Support</a>
+                        <a href="financing.html">Financing</a>
+                        <a href="specials.html">Specials &amp; Coupons</a>
+                        <a href="hurricane-prep.html">Hurricane Prep</a>
+                        <a href="team.html">Meet the Team</a>
+                        <a href="blog/index.html">Blog &amp; Resources</a>
+                    </div>
+                </div>
+                <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="contact.html" class="btn btn-primary header-cta">Free Estimate</a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Diagnose My Door</span></nav>
+            <h1>What's Wrong With My <span class="highlight">Garage Door?</span></h1>
+            <p>Answer a few quick questions and get an instant diagnosis with recommended next steps.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container diag-container">
+            <div class="diag-card">
+                <div class="diag-progress">
+                    <div class="diag-progress-dot active"></div>
+                    <div class="diag-progress-dot"></div>
+                    <div class="diag-progress-dot"></div>
+                </div>
+
+                <!-- Step 1 -->
+                <div class="diag-step" id="diag-step-1">
+                    <div class="diag-step-label">Step 1 of 2</div>
+                    <div class="diag-question">What's happening with your garage door?</div>
+                    <div class="diag-options">
+                        <button class="diag-option" data-symptom="wont-open"><i class="fas fa-door-closed"></i> Won't open or close</button>
+                        <button class="diag-option" data-symptom="noisy"><i class="fas fa-volume-high"></i> Making unusual noises</button>
+                        <button class="diag-option" data-symptom="off-track"><i class="fas fa-arrows-left-right"></i> Off track or crooked</button>
+                        <button class="diag-option" data-symptom="partial"><i class="fas fa-arrows-up-down"></i> Opens/closes partially</button>
+                        <button class="diag-option" data-symptom="remote"><i class="fas fa-wifi"></i> Remote/keypad not working</button>
+                        <button class="diag-option" data-symptom="damaged"><i class="fas fa-hammer"></i> Visibly damaged</button>
+                        <button class="diag-option" data-symptom="spring"><i class="fas fa-compress-arrows-alt"></i> Spring appears broken</button>
+                        <button class="diag-option" data-symptom="other"><i class="fas fa-question-circle"></i> Other / not sure</button>
+                    </div>
+                </div>
+
+                <!-- Step 2 (dynamic) -->
+                <div class="diag-step" id="diag-step-2" style="display:none;"></div>
+
+                <!-- Result -->
+                <div class="diag-result" id="diag-result"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Need Professional Help?</h2>
+            <p>Our trained technicians are available for same-day service across Broward and Palm Beach County.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary btn-lg">Schedule a Repair</a>
+                <a href="tel:+19545551234" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> (954) 555-1234</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo footer-logo"><span class="logo-icon"><i class="fas fa-warehouse"></i></span><div class="logo-text"><span class="logo-name">ProTeam</span><span class="logo-tagline">Garage Door</span></div></a>
+                    <p>South Florida's trusted garage door experts. Over 20 years of quality installations, repairs, and hurricane protection.</p>
+                    <div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Google"><i class="fab fa-google"></i></a><a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a></div>
+                </div>
+                <div class="footer-links"><h4>Services</h4><a href="services/garage-door-installation.html">Garage Door Installation</a><a href="services/garage-door-repair.html">Garage Door Repair</a><a href="services/garage-door-openers.html">Opener Systems</a><a href="services/spring-replacement.html">Spring Replacement</a><a href="services/hurricane-garage-doors.html">Hurricane-Rated Doors</a><a href="services/commercial-garage-doors.html">Commercial Doors</a><a href="services/garage-door-maintenance.html">Maintenance</a></div>
+                <div class="footer-links"><h4>Resources</h4><a href="faq.html">FAQ &amp; Support</a><a href="financing.html">Financing</a><a href="specials.html">Specials &amp; Coupons</a><a href="blog/index.html">Blog &amp; Resources</a><a href="quiz.html">Door Style Quiz</a><a href="diagnostic.html">Diagnose My Door</a><a href="hurricane-prep.html">Hurricane Prep</a><a href="team.html">Meet the Team</a></div>
+                <div class="footer-contact"><h4>Contact Us</h4><p><i class="fas fa-phone"></i> <a href="tel:+19545551234">(954) 555-1234</a></p><p><i class="fas fa-envelope"></i> <a href="mailto:info@proteamgaragedoor.com">info@proteamgaragedoor.com</a></p><p><i class="fas fa-map-marker-alt"></i> Serving Broward & Palm Beach County</p><p><i class="fas fa-clock"></i> Mon-Sat: 7AM-7PM | Emergency 24/7</p></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 ProTeam Garage Door. All Rights Reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="sitemap.xml">Sitemap</a></div></div>
+        </div>
+    </footer>
+
+    <a href="tel:+19545551234" class="floating-cta" aria-label="Call us"><i class="fas fa-phone"></i></a>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+    (function(){
+        var followUps = {
+            'wont-open': { q: 'Can you tell us more?', opts: [
+                { text: 'Heard a loud bang recently', icon: 'fas fa-bomb', diag: 'broken-spring' },
+                { text: 'Door feels extremely heavy', icon: 'fas fa-weight-hanging', diag: 'broken-spring' },
+                { text: 'Opener motor runs but door stays', icon: 'fas fa-cog', diag: 'stripped-gear' },
+                { text: 'No response at all (no sound)', icon: 'fas fa-power-off', diag: 'power-issue' }
+            ]},
+            'noisy': { q: 'What kind of noise?', opts: [
+                { text: 'Grinding or scraping', icon: 'fas fa-gears', diag: 'worn-rollers' },
+                { text: 'Squeaking or squealing', icon: 'fas fa-oil-can', diag: 'needs-lube' },
+                { text: 'Rattling or vibrating', icon: 'fas fa-wave-square', diag: 'loose-hardware' },
+                { text: 'Popping or banging', icon: 'fas fa-explosion', diag: 'spring-tension' }
+            ]},
+            'off-track': { q: 'How bad is it?', opts: [
+                { text: 'Door is visibly tilted/crooked', icon: 'fas fa-arrows-alt-h', diag: 'off-track' },
+                { text: 'Cable hanging loose', icon: 'fas fa-link-slash', diag: 'broken-cable' },
+                { text: 'Roller came out of track', icon: 'fas fa-circle-xmark', diag: 'off-track' },
+                { text: 'Door hit something while moving', icon: 'fas fa-car-crash', diag: 'impact-damage' }
+            ]},
+            'partial': { q: 'What happens exactly?', opts: [
+                { text: 'Opens a few inches then stops', icon: 'fas fa-ruler-vertical', diag: 'broken-spring' },
+                { text: 'Closes then reverses back up', icon: 'fas fa-rotate-left', diag: 'sensor-issue' },
+                { text: 'Stops at random points', icon: 'fas fa-hand', diag: 'limit-switch' },
+                { text: 'Moves very slowly', icon: 'fas fa-turtle', diag: 'worn-rollers' }
+            ]},
+            'remote': { q: 'What have you tried?', opts: [
+                { text: 'Replaced batteries, still nothing', icon: 'fas fa-battery-full', diag: 'remote-reprogram' },
+                { text: 'Wall button works, remote doesn\'t', icon: 'fas fa-toggle-on', diag: 'remote-reprogram' },
+                { text: 'Nothing works (wall button or remote)', icon: 'fas fa-plug-circle-xmark', diag: 'power-issue' },
+                { text: 'Keypad won\'t accept code', icon: 'fas fa-keyboard', diag: 'keypad-issue' }
+            ]},
+            'damaged': { q: 'What kind of damage?', opts: [
+                { text: 'Dented or bent panel(s)', icon: 'fas fa-compress', diag: 'panel-damage' },
+                { text: 'Cracked or broken panel', icon: 'fas fa-burst', diag: 'panel-damage' },
+                { text: 'Weather/water damage', icon: 'fas fa-cloud-rain', diag: 'weathering' },
+                { text: 'Storm or impact damage', icon: 'fas fa-hurricane', diag: 'impact-damage' }
+            ]},
+            'spring': { q: 'What are you seeing?', opts: [
+                { text: 'Visible gap in the spring coil', icon: 'fas fa-circle-minus', diag: 'broken-spring' },
+                { text: 'Spring looks stretched or loose', icon: 'fas fa-expand', diag: 'spring-tension' },
+                { text: 'Heard a loud bang from garage', icon: 'fas fa-bomb', diag: 'broken-spring' },
+                { text: 'Not sure, door just won\'t move', icon: 'fas fa-question', diag: 'broken-spring' }
+            ]},
+            'other': { q: 'Can you describe it?', opts: [
+                { text: 'Door shakes or wobbles', icon: 'fas fa-wave-square', diag: 'loose-hardware' },
+                { text: 'Gap at bottom or sides', icon: 'fas fa-border-none', diag: 'weathering' },
+                { text: 'Opener light won\'t turn off', icon: 'fas fa-lightbulb', diag: 'limit-switch' },
+                { text: 'I just want an inspection', icon: 'fas fa-magnifying-glass', diag: 'inspection' }
+            ]}
+        };
+
+        var diagnoses = {
+            'broken-spring': { title: 'Broken Garage Door Spring', urgency: 'emergency', icon: 'fas fa-exclamation-triangle',
+                desc: 'Based on your symptoms, you likely have a <strong>broken torsion or extension spring</strong>. This is the #1 reason garage doors stop working. The spring bears the full weight of the door (250-400 lbs), so when it breaks, the door becomes nearly impossible to lift.',
+                warning: '<i class="fas fa-exclamation-triangle"></i> <strong>Safety Warning:</strong> Never attempt to repair or replace garage door springs yourself. They are under extreme tension and can cause serious injury or death. Do not try to force the door open.',
+                service: 'Spring Replacement', link: 'services/spring-replacement.html' },
+            'stripped-gear': { title: 'Stripped Opener Gear or Drive', urgency: 'urgent', icon: 'fas fa-cog',
+                desc: 'When the opener motor runs but the door doesn\'t move, it typically indicates a <strong>stripped gear inside the opener unit</strong> or a broken drive belt/chain. The motor is spinning but can\'t transfer power to move the door.',
+                service: 'Opener Repair', link: 'services/garage-door-openers.html' },
+            'power-issue': { title: 'Electrical or Power Problem', urgency: 'routine', icon: 'fas fa-plug',
+                desc: 'Complete unresponsiveness suggests a <strong>power supply issue</strong>. Check your circuit breaker, GFCI outlet, and the outlet the opener is plugged into. If the outlet has power but the opener doesn\'t respond, the logic board or transformer may have failed.',
+                service: 'Opener Diagnosis & Repair', link: 'services/garage-door-openers.html' },
+            'worn-rollers': { title: 'Worn Rollers or Bearings', urgency: 'routine', icon: 'fas fa-gears',
+                desc: 'Grinding, scraping, or slow movement typically means your <strong>rollers are worn out</strong>. Standard steel rollers last about 10,000 cycles. Upgrading to nylon rollers eliminates noise and lasts significantly longer.',
+                service: 'Roller Replacement & Tune-Up', link: 'services/garage-door-maintenance.html' },
+            'needs-lube': { title: 'Lubrication Needed', urgency: 'routine', icon: 'fas fa-oil-can',
+                desc: 'Squeaking and squealing usually means your door\'s <strong>moving parts need lubrication</strong>. Hinges, rollers, springs, and bearing plates should be lubricated with white lithium grease or silicone spray every 6 months. Avoid WD-40 — it\'s a degreaser, not a lubricant.',
+                service: 'Maintenance & Tune-Up', link: 'services/garage-door-maintenance.html' },
+            'loose-hardware': { title: 'Loose Hardware', urgency: 'routine', icon: 'fas fa-screwdriver-wrench',
+                desc: 'Rattling and vibrating during operation usually indicates <strong>loose nuts, bolts, or brackets</strong>. Over thousands of cycles, hardware naturally loosens. A tune-up to tighten all hardware and check alignment typically resolves this.',
+                service: 'Maintenance & Tune-Up', link: 'services/garage-door-maintenance.html' },
+            'spring-tension': { title: 'Spring Tension Issue', urgency: 'urgent', icon: 'fas fa-compress-arrows-alt',
+                desc: 'Popping noises or a spring that looks stretched suggests a <strong>spring tension problem</strong>. The spring may be near the end of its life cycle or was improperly adjusted. This should be addressed soon to prevent a full break.',
+                warning: '<i class="fas fa-exclamation-triangle"></i> <strong>Important:</strong> Do not attempt to adjust spring tension yourself. This requires specialized tools and training.',
+                service: 'Spring Adjustment/Replacement', link: 'services/spring-replacement.html' },
+            'off-track': { title: 'Door Off Track', urgency: 'emergency', icon: 'fas fa-arrows-left-right',
+                desc: 'A door that\'s <strong>come off its track</strong> is both a safety hazard and can cause further damage if forced. This can happen from impact, a broken cable, worn rollers, or track misalignment.',
+                warning: '<i class="fas fa-exclamation-triangle"></i> <strong>Do not force the door.</strong> Operating an off-track door can bend panels, damage the opener, or cause the door to fall.',
+                service: 'Emergency Track Repair', link: 'services/garage-door-repair.html' },
+            'broken-cable': { title: 'Broken Lift Cable', urgency: 'emergency', icon: 'fas fa-link-slash',
+                desc: 'A <strong>broken lift cable</strong> means the door has lost its connection to the spring system on one side. The door may hang crooked or refuse to move. Cables typically break due to fraying from age or a spring failure.',
+                warning: '<i class="fas fa-exclamation-triangle"></i> <strong>Do not operate the door.</strong> A broken cable can cause the door to drop unexpectedly.',
+                service: 'Cable Replacement', link: 'services/garage-door-repair.html' },
+            'sensor-issue': { title: 'Safety Sensor Misalignment', urgency: 'routine', icon: 'fas fa-eye',
+                desc: 'A door that closes then immediately reverses usually means the <strong>photo-eye safety sensors are misaligned or obstructed</strong>. Check that both sensors at the bottom of the track have solid green/amber lights and that nothing is blocking the beam.',
+                service: 'Sensor Adjustment', link: 'services/garage-door-repair.html' },
+            'limit-switch': { title: 'Limit Switch Adjustment Needed', urgency: 'routine', icon: 'fas fa-sliders',
+                desc: 'When the door stops at random points or the opener light stays on, the <strong>travel limit switches</strong> likely need adjustment. These tell the opener where the door\'s fully open and fully closed positions are.',
+                service: 'Opener Adjustment', link: 'services/garage-door-openers.html' },
+            'remote-reprogram': { title: 'Remote Needs Reprogramming', urgency: 'routine', icon: 'fas fa-wifi',
+                desc: 'If the wall button works but the remote doesn\'t (even with new batteries), your <strong>remote likely needs to be reprogrammed</strong> to the opener. Power surges, opener resets, or radio interference can cause remotes to lose their pairing.',
+                service: 'Remote Programming', link: 'services/garage-door-openers.html' },
+            'keypad-issue': { title: 'Keypad Malfunction', urgency: 'routine', icon: 'fas fa-keyboard',
+                desc: 'Wireless keypads can fail due to <strong>dead batteries, weather exposure, or programming issues</strong>. Try replacing the battery first (usually a 9V or 12V). If that doesn\'t help, the keypad may need reprogramming or replacement.',
+                service: 'Keypad Service', link: 'services/garage-door-openers.html' },
+            'panel-damage': { title: 'Damaged Door Panel(s)', urgency: 'urgent', icon: 'fas fa-compress',
+                desc: 'Dented, bent, or cracked panels are more than cosmetic — they can affect the <strong>door\'s structural integrity, insulation, and weather seal</strong>. Individual panels can often be replaced without replacing the entire door, saving significant cost.',
+                service: 'Panel Replacement', link: 'services/garage-door-repair.html' },
+            'impact-damage': { title: 'Impact or Storm Damage', urgency: 'emergency', icon: 'fas fa-hurricane',
+                desc: 'Storm or vehicle impact damage can compromise your door\'s <strong>structural integrity, tracks, and hardware</strong>. Even if the door still operates, hidden damage may cause failure later. A full inspection is recommended.',
+                service: 'Emergency Repair / Door Replacement', link: 'services/garage-door-repair.html' },
+            'weathering': { title: 'Weatherstripping & Seal Deterioration', urgency: 'routine', icon: 'fas fa-cloud-rain',
+                desc: 'Gaps at the bottom or sides of your door indicate <strong>worn weatherstripping or a deteriorated bottom seal</strong>. This allows water, pests, dust, and hot/cold air into your garage. Replacement seals are inexpensive and make a big difference.',
+                service: 'Seal & Weatherstrip Replacement', link: 'services/garage-door-maintenance.html' },
+            'inspection': { title: 'Professional Inspection Recommended', urgency: 'routine', icon: 'fas fa-magnifying-glass',
+                desc: 'A <strong>professional 25-point inspection</strong> covers springs, cables, rollers, tracks, hardware, opener, sensors, balance, and weatherstripping. We recommend an annual tune-up to catch problems early and extend your door\'s life.',
+                service: 'Maintenance & Tune-Up', link: 'services/garage-door-maintenance.html' }
+        };
+
+        var dots = document.querySelectorAll('.diag-progress-dot');
+        var step1 = document.getElementById('diag-step-1');
+        var step2 = document.getElementById('diag-step-2');
+        var resultDiv = document.getElementById('diag-result');
+
+        // Step 1 click
+        document.querySelectorAll('.diag-option[data-symptom]').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                var sym = this.dataset.symptom;
+                var fu = followUps[sym];
+                step1.style.display = 'none';
+                dots[0].classList.remove('active'); dots[0].classList.add('done');
+                dots[1].classList.add('active');
+
+                var html = '<div class="diag-step-label">Step 2 of 2</div>';
+                html += '<div class="diag-question">' + fu.q + '</div>';
+                html += '<div class="diag-options">';
+                fu.opts.forEach(function(o){
+                    html += '<button class="diag-option" data-diag="' + o.diag + '"><i class="' + o.icon + '"></i> ' + o.text + '</button>';
+                });
+                html += '</div>';
+                step2.innerHTML = html;
+                step2.style.display = 'block';
+
+                step2.querySelectorAll('.diag-option').forEach(function(btn2){
+                    btn2.addEventListener('click', function(){ showResult(this.dataset.diag); });
+                });
+            });
+        });
+
+        function showResult(diagKey){
+            var d = diagnoses[diagKey];
+            step2.style.display = 'none';
+            dots[1].classList.remove('active'); dots[1].classList.add('done');
+            dots[2].classList.add('active');
+
+            var html = '<div class="diag-result-header">';
+            html += '<div class="diag-result-icon ' + d.urgency + '"><i class="' + d.icon + '"></i></div>';
+            html += '<div><h2 style="font-size:1.3rem;margin:0 0 6px;">' + d.title + '</h2>';
+            html += '<span class="urgency-badge ' + d.urgency + '">' + d.urgency.charAt(0).toUpperCase() + d.urgency.slice(1) + ' Priority</span></div></div>';
+            html += '<p style="line-height:1.7;">' + d.desc + '</p>';
+            if (d.warning) html += '<div class="diag-warning">' + d.warning + '</div>';
+            html += '<div class="diag-service"><strong>Recommended Service:</strong> ' + d.service + '</div>';
+            html += '<div class="diag-buttons">';
+            html += '<a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Schedule This Repair</a>';
+            html += '<a href="tel:+19545551234" class="btn btn-outline"><i class="fas fa-phone"></i> Call (954) 555-1234</a>';
+            html += '</div>';
+            html += '<button class="diag-restart" onclick="location.reload()"><i class="fas fa-redo"></i> Start Over</button>';
+            resultDiv.innerHTML = html;
+            resultDiv.style.display = 'block';
+        }
+    })();
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
