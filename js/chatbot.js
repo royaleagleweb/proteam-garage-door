@@ -57,7 +57,7 @@
                   "Email: " + BUSINESS_EMAIL + "\n" +
                   "Hours: " + BUSINESS_HOURS + "\n" +
                   "Emergency Service: Available 24/7\n\n" +
-                  "We're a licensed and insured Florida contractor with over 20 years of experience.",
+                  "We're a licensed and insured Florida contractor with 5+ years of experience.",
             options: ['Get a free estimate', 'Services we offer', 'Emergency repair'],
             link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19545551234' }
         },
