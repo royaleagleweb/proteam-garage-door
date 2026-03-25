@@ -5,8 +5,8 @@
 (function () {
     'use strict';
 
-    var BUSINESS_PHONE = '(954) 555-1234';
-    var BUSINESS_EMAIL = 'info@proteamgaragedoor.com';
+    var BUSINESS_PHONE = '(954) 206-1418';
+    var BUSINESS_EMAIL = 'info@proteamgarage.com';
     var BUSINESS_HOURS = 'Mon-Sat: 7AM-7PM';
 
     var FAQ_RESPONSES = {
@@ -32,7 +32,7 @@
         'emergency repair': {
             text: "We offer 24/7 emergency garage door repair across Broward and Palm Beach County. For immediate assistance, please call us right away at " + BUSINESS_PHONE + ". A technician can typically arrive within 1 hour.",
             options: ['Door won\'t open', 'Broken spring', 'Door off track', 'Other services'],
-            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19545551234' }
+            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19542061418' }
         },
         'services we offer': {
             text: "We provide a full range of garage door services:\n\n" +
@@ -59,7 +59,7 @@
                   "Emergency Service: Available 24/7\n\n" +
                   "We're a licensed and insured Florida contractor with 5+ years of experience.",
             options: ['Get a free estimate', 'Services we offer', 'Emergency repair'],
-            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19545551234' }
+            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19542061418' }
         },
         'new door installation': {
             text: "We install all major brands including Clopay, Amarr, Wayne Dalton, C.H.I., and Raynor. Whether you need a single residential door or a multi-bay commercial setup, we handle it all.\n\nOur installations include:\n- Free on-site measurement\n- Removal of your old door\n- Professional installation\n- Full warranty coverage",
@@ -122,7 +122,7 @@
                   "- Power outage\n\n" +
                   "Try checking your sensors and remote batteries first. If it's still stuck, call us for fast service!",
             options: ['Emergency repair', 'Spring replacement', 'Get a free estimate'],
-            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19545551234' }
+            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19542061418' }
         },
         'broken spring': {
             text: "A broken spring is the #1 reason garage doors stop working. Warning signs include:\n\n" +
@@ -132,12 +132,12 @@
                   "- Visible gap in the spring\n\n" +
                   "Never try to operate a door with a broken spring. Call us for safe, same-day replacement!",
             options: ['Emergency repair', 'Spring replacement', 'Get a free estimate'],
-            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19545551234' }
+            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19542061418' }
         },
         'door off track': {
             text: "A door that's come off its track needs professional attention right away. Don't force it — you could cause more damage or injury.\n\nOur technicians can usually get your door back on track in under an hour.",
             options: ['Emergency repair', 'Door repair', 'Get a free estimate'],
-            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19545551234' }
+            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19542061418' }
         },
         'other services': {
             text: "We also offer:\n\n" +
@@ -267,7 +267,7 @@
               "- Email " + BUSINESS_EMAIL + "\n\n" +
               "Or fill out the form below and a team member will reach out within 15 minutes during business hours (" + BUSINESS_HOURS + ").",
         options: ['Get a free estimate', 'Services we offer'],
-        link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19545551234' },
+        link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19542061418' },
         showHandoffForm: true
     };
 
@@ -430,7 +430,7 @@
                         addBotMessage({
                             text: "Thanks, " + name + "! A team member will call you at " + phone + " within 15 minutes during business hours. For immediate help, call us directly.",
                             options: ['Services we offer', 'Get a free estimate'],
-                            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19545551234' }
+                            link: { text: 'Call Now: ' + BUSINESS_PHONE, url: 'tel:+19542061418' }
                         });
                     }, 500);
                 });
