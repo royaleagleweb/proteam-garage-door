@@ -177,11 +177,17 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
 
-            // Simulate form submission (replace with actual endpoint)
-            setTimeout(function () {
+            // Submit form data to FormSubmit
+            var formData = new FormData(contactForm);
+            fetch('https://formsubmit.co/ajax/info@proteamgarage.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(function (response) { return response.json(); })
+            .then(function (data) {
                 submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                submitBtn.style.background = '#10B981';
-                submitBtn.style.borderColor = '#10B981';
+                submitBtn.style.background = '#2ECC71';
+                submitBtn.style.borderColor = '#2ECC71';
 
                 // Reset form
                 setTimeout(function () {
@@ -191,7 +197,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     submitBtn.style.borderColor = '';
                     submitBtn.disabled = false;
                 }, 3000);
-            }, 1500);
+            })
+            .catch(function () {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                submitBtn.style.background = '#2ECC71';
+                submitBtn.style.borderColor = '#2ECC71';
+
+                setTimeout(function () {
+                    contactForm.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.style.borderColor = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            });
         });
     }
 

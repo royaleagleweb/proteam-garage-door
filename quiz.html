@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Take our interactive quiz to find the perfect garage door for your South Florida home. Get a personalized recommendation in under 2 minutes.">
+    <meta name="keywords" content="garage door quiz, which garage door, garage door recommendation, best garage door for my home, South Florida garage door">
+    <meta name="robots" content="index, follow">
+    <title>Which Garage Door Is Right For You? | ProTeam Garage Door Quiz</title>
+    <link rel="canonical" href="https://royaleagleweb.github.io/proteam-garage-door/quiz.html">
+
+    <meta property="og:title" content="Which Garage Door Is Right For You? | ProTeam Garage Door Quiz">
+    <meta property="og:description" content="Take our quick quiz to find the perfect garage door for your home. Personalized recommendations in under 2 minutes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://royaleagleweb.github.io/proteam-garage-door/quiz.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Garage Door Quiz",
+        "description": "Interactive quiz to help homeowners find the perfect garage door for their South Florida home."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://royaleagleweb.github.io/proteam-garage-door/"},
+            {"@type": "ListItem", "position": 2, "name": "Door Quiz"}
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+
+    <style>
+        .quiz-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+            min-height: 60vh;
+        }
+        .quiz-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .quiz-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .quiz-progress {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .quiz-progress-bar {
+            flex: 1;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .quiz-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary, #0F4C3A), var(--accent, #2ECC71));
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+        .quiz-progress-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary, #0F4C3A);
+            white-space: nowrap;
+        }
+        .quiz-question-wrapper {
+            position: relative;
+        }
+        .quiz-question {
+            animation: quizFadeIn 0.4s ease;
+        }
+        .quiz-question.fade-out {
+            animation: quizFadeOut 0.3s ease forwards;
+        }
+        @keyframes quizFadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes quizFadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-16px); }
+        }
+        .quiz-question h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-dark, #0A3328);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .quiz-answers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        .quiz-answers.three-col {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .quiz-answer-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.25rem 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            line-height: 1.3;
+        }
+        .quiz-answer-btn i {
+            font-size: 1.6rem;
+            color: var(--primary-light, #1A6B52);
+            transition: color 0.25s ease, transform 0.25s ease;
+        }
+        .quiz-answer-btn:hover {
+            border-color: var(--accent, #2ECC71);
+            background: #f0fdf4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46,204,113,0.15);
+        }
+        .quiz-answer-btn:hover i {
+            color: var(--accent-dark, #27AE60);
+            transform: scale(1.1);
+        }
+        .quiz-answer-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Result */
+        .quiz-result {
+            animation: quizFadeIn 0.5s ease;
+            text-align: center;
+        }
+        .quiz-result-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .quiz-result-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary, #0F4C3A), var(--accent-dark, #27AE60));
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+        .quiz-result h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-dark, #0A3328);
+            margin-bottom: 1rem;
+        }
+        .quiz-result p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .quiz-result-features {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .quiz-result-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary, #0F4C3A);
+        }
+        .quiz-result-feature i {
+            color: var(--accent, #2ECC71);
+        }
+        .quiz-result-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .quiz-result-actions .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+        }
+        .quiz-retake-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-light, #1A6B52);
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+        .quiz-retake-btn:hover {
+            color: var(--accent-dark, #27AE60);
+        }
+
+        @media (max-width: 600px) {
+            .quiz-card {
+                padding: 1.5rem 1.25rem;
+            }
+            .quiz-answers {
+                grid-template-columns: 1fr;
+            }
+            .quiz-answers.three-col {
+                grid-template-columns: 1fr;
+            }
+            .quiz-answer-btn {
+                flex-direction: row;
+                padding: 1rem;
+                text-align: left;
+            }
+            .quiz-answer-btn i {
+                font-size: 1.3rem;
+                min-width: 28px;
+            }
+            .quiz-question h2 {
+                font-size: 1.15rem;
+            }
+            .quiz-result h2 {
+                font-size: 1.3rem;
+            }
+            .quiz-result-img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fas fa-map-marker-alt"></i> Serving Broward & Palm Beach County</span>
+                <span><i class="fas fa-clock"></i> Mon-Sat: 7AM - 7PM | Emergency 24/7</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:+19542061418"><i class="fas fa-phone"></i> (954) 206-1418</a>
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-warehouse"></i></span>
+                <div class="logo-text">
+                    <span class="logo-name">ProTeam</span>
+                    <span class="logo-tagline">Garage Door</span>
+                </div>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="index.html#services" class="nav-link nav-dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="services/garage-door-installation.html">Garage Door Installation</a>
+                        <a href="services/garage-door-repair.html">Garage Door Repair</a>
+                        <a href="services/garage-door-openers.html">Opener Systems</a>
+                        <a href="services/spring-replacement.html">Spring Replacement</a>
+                        <a href="services/hurricane-garage-doors.html">Hurricane-Rated Doors</a>
+                        <a href="services/commercial-garage-doors.html">Commercial Doors</a>
+                        <a href="services/garage-door-maintenance.html">Maintenance & Tune-Up</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="index.html#service-areas" class="nav-link nav-dropdown-toggle">Locations <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu nav-dropdown-mega">
+                        <a href="locations/fort-lauderdale.html">Fort Lauderdale</a>
+                        <a href="locations/boca-raton.html">Boca Raton</a>
+                        <a href="locations/pompano-beach.html">Pompano Beach</a>
+                        <a href="locations/coral-springs.html">Coral Springs</a>
+                        <a href="locations/west-palm-beach.html">West Palm Beach</a>
+                        <a href="locations/hollywood.html">Hollywood</a>
+                        <a href="locations/plantation.html">Plantation</a>
+                        <a href="locations/davie.html">Davie</a>
+                        <a href="locations/weston.html">Weston</a>
+                        <a href="locations/deerfield-beach.html">Deerfield Beach</a>
+                        <a href="locations/delray-beach.html">Delray Beach</a>
+                        <a href="locations/boynton-beach.html">Boynton Beach</a>
+                        <a href="locations/sunrise.html">Sunrise</a>
+                        <a href="locations/parkland.html">Parkland</a>
+                        <a href="locations/coconut-creek.html">Coconut Creek</a>
+                        <a href="locations/jupiter.html">Jupiter</a>
+                        <a href="locations/palm-beach-gardens.html">Palm Beach Gardens</a>
+                        <a href="locations/wellington.html">Wellington</a>
+                        <a href="locations/margate.html">Margate</a>
+                        <a href="locations/tamarac.html">Tamarac</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="garage-door-styles.html">Garage Door Styles</a>
+                        <a href="parts-accessories.html">Parts &amp; Accessories</a>
+                        <a href="quiz.html">Door Style Quiz</a>
+                        <a href="diagnostic.html">Diagnose My Door</a>
+                        <a href="faq.html">FAQ &amp; Support</a>
+                        <a href="financing.html">Financing</a>
+                        <a href="specials.html">Specials &amp; Coupons</a>
+                        <a href="hurricane-prep.html">Hurricane Prep</a>
+                        <a href="team.html">Meet the Team</a>
+                        <a href="blog/index.html">Blog &amp; Resources</a>
+                    </div>
+                </div>
+                <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="contact.html" class="btn btn-primary header-cta">Free Estimate</a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <span>Door Quiz</span>
+            </nav>
+            <h1>Which Door Is <span class="highlight">Right For You?</span></h1>
+            <p>Answer 6 quick questions and we'll recommend the perfect garage door for your home, style, and budget.</p>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+        <div class="quiz-container">
+            <div class="quiz-card">
+                <div class="quiz-progress" id="quizProgress">
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress-fill" id="quizProgressFill" style="width: 16.66%"></div>
+                    </div>
+                    <span class="quiz-progress-text" id="quizProgressText">1 of 6</span>
+                </div>
+                <div class="quiz-question-wrapper" id="quizWrapper">
+                    <!-- Questions rendered by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Need Expert Advice? We're Here to Help</h2>
+            <p>Our team can walk you through every option in person. Call or visit for a free consultation.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary btn-lg">Contact Us Today</a>
+                <a href="tel:+19542061418" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> (954) 206-1418</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-icon"><i class="fas fa-warehouse"></i></span>
+                        <div class="logo-text">
+                            <span class="logo-name">ProTeam</span>
+                            <span class="logo-tagline">Garage Door</span>
+                        </div>
+                    </a>
+                    <p>South Florida's trusted garage door experts. 5+ years of quality installations, repairs, and hurricane protection across Broward and Palm Beach County.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                        <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="services/garage-door-installation.html">Garage Door Installation</a>
+                    <a href="services/garage-door-repair.html">Garage Door Repair</a>
+                    <a href="services/garage-door-openers.html">Opener Systems</a>
+                    <a href="services/spring-replacement.html">Spring Replacement</a>
+                    <a href="services/hurricane-garage-doors.html">Hurricane-Rated Doors</a>
+                    <a href="services/commercial-garage-doors.html">Commercial Doors</a>
+                    <a href="services/garage-door-maintenance.html">Maintenance</a>
+                    <a href="garage-door-styles.html">Garage Door Styles</a>
+                    <a href="parts-accessories.html">Parts &amp; Accessories</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Service Areas</h4>
+                    <a href="locations/fort-lauderdale.html">Fort Lauderdale</a>
+                    <a href="locations/boca-raton.html">Boca Raton</a>
+                    <a href="locations/west-palm-beach.html">West Palm Beach</a>
+                    <a href="locations/coral-springs.html">Coral Springs</a>
+                    <a href="locations/pompano-beach.html">Pompano Beach</a>
+                    <a href="locations/hollywood.html">Hollywood</a>
+                    <a href="locations/weston.html">Weston</a>
+                    <a href="locations/plantation.html">Plantation</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="faq.html">FAQ &amp; Support</a>
+                    <a href="financing.html">Financing</a>
+                    <a href="specials.html">Specials &amp; Coupons</a>
+                    <a href="blog/index.html">Blog &amp; Resources</a>
+                    <a href="quiz.html">Door Style Quiz</a>
+                    <a href="diagnostic.html">Diagnose My Door</a>
+                    <a href="hurricane-prep.html">Hurricane Prep</a>
+                    <a href="team.html">Meet the Team</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+19542061418">(954) 206-1418</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@proteamgarage.com">info@proteamgarage.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Serving Broward & Palm Beach County</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 7AM-7PM | Emergency 24/7</p>
+                    <div class="footer-license">
+                        <p><i class="fas fa-id-card"></i> FL Licensed Contractor</p>
+                        <p><i class="fas fa-shield-halved"></i> Fully Insured</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ProTeam Garage Door. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="tel:+19542061418" class="floating-cta" aria-label="Call us"><i class="fas fa-phone"></i></a>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+
+    <script>
+    (function() {
+        var questions = [
+            {
+                text: "What's your home's architectural style?",
+                answers: [
+                    { label: "Modern / Contemporary", icon: "fa-building", value: "modern" },
+                    { label: "Traditional / Colonial", icon: "fa-house-chimney", value: "traditional" },
+                    { label: "Mediterranean / Spanish", icon: "fa-archway", value: "mediterranean" },
+                    { label: "Craftsman / Ranch", icon: "fa-house", value: "craftsman" }
+                ]
+            },
+            {
+                text: "What matters most to you?",
+                answers: [
+                    { label: "Curb Appeal & Style", icon: "fa-palette", value: "style" },
+                    { label: "Hurricane Protection", icon: "fa-hurricane", value: "hurricane" },
+                    { label: "Energy Efficiency", icon: "fa-leaf", value: "energy" },
+                    { label: "Low Maintenance", icon: "fa-wrench", value: "maintenance" }
+                ]
+            },
+            {
+                text: "What's your preferred material?",
+                answers: [
+                    { label: "Steel", icon: "fa-shield-halved", value: "steel" },
+                    { label: "Aluminum & Glass", icon: "fa-border-all", value: "aluminum" },
+                    { label: "Wood / Wood-Look", icon: "fa-tree", value: "wood" },
+                    { label: "I'm Not Sure", icon: "fa-circle-question", value: "unsure" }
+                ]
+            },
+            {
+                text: "Do you need hurricane / wind-load rating?",
+                cols: 3,
+                answers: [
+                    { label: "Yes \u2014 must meet FL code", icon: "fa-circle-check", value: "yes" },
+                    { label: "Nice to have", icon: "fa-thumbs-up", value: "maybe" },
+                    { label: "Not a priority", icon: "fa-circle-xmark", value: "no" }
+                ]
+            },
+            {
+                text: "What's your budget range?",
+                answers: [
+                    { label: "Economy $800\u2013$1,500", icon: "fa-dollar-sign", value: "economy" },
+                    { label: "Mid-Range $1,500\u2013$3,000", icon: "fa-coins", value: "mid" },
+                    { label: "Premium $3,000\u2013$5,000", icon: "fa-gem", value: "premium" },
+                    { label: "Luxury $5,000+", icon: "fa-crown", value: "luxury" }
+                ]
+            },
+            {
+                text: "Do you want windows in your door?",
+                cols: 3,
+                answers: [
+                    { label: "Yes \u2014 lots of light", icon: "fa-sun", value: "lots" },
+                    { label: "Small decorative windows", icon: "fa-window-maximize", value: "small" },
+                    { label: "No windows", icon: "fa-ban", value: "none" }
+                ]
+            }
+        ];
+
+        var recommendations = {
+            "modern-aluminum": {
+                name: "Modern Aluminum & Glass",
+                image: "https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop",
+                description: "Sleek full-view aluminum frames with tempered glass panels deliver a stunning contemporary look. These doors flood your garage with natural light and pair perfectly with modern and mid-century architecture. Available with frosted, tinted, or clear glass options.",
+                features: ["Full-View Glass Panels", "Powder-Coated Aluminum", "Hurricane-Rated Options"]
+            },
+            "traditional-raised": {
+                name: "Traditional Raised Panel",
+                image: "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop",
+                description: "The classic raised panel door is America's most popular garage door style for good reason. Clean lines, symmetrical panels, and timeless proportions complement Colonial, Cape Cod, and traditional homes beautifully. Available in steel with optional insulation for energy efficiency.",
+                features: ["Classic Design", "Steel Construction", "Insulated Options"]
+            },
+            "carriage-house": {
+                name: "Carriage House",
+                image: "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop",
+                description: "Carriage house doors bring old-world charm with the convenience of modern overhead operation. Featuring decorative hardware, crossbuck panels, and arched windows, they're the ideal match for Craftsman, farmhouse, and ranch-style homes. Built in durable steel with wood-grain finishes.",
+                features: ["Decorative Hardware", "Wood-Grain Finish", "Insulated Steel"]
+            },
+            "mediterranean": {
+                name: "Mediterranean Style",
+                image: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop",
+                description: "Inspired by the iron gates and arched entryways of Mediterranean villas, these doors feature ornamental details, wrought-iron accents, and warm earth-tone finishes. They pair beautifully with stucco facades, barrel tile roofs, and Spanish-influenced architecture common across South Florida.",
+                features: ["Wrought-Iron Accents", "Arched Window Options", "Custom Colors"]
+            },
+            "wood-look": {
+                name: "Wood-Look Composite",
+                image: "https://images.pexels.com/photos/2079234/pexels-photo-2079234.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop",
+                description: "Get the warmth and beauty of real wood without the warping, cracking, and constant refinishing. Wood-look composite doors use advanced finishes on steel or fiberglass to replicate natural wood grains. They stand up to South Florida's heat and humidity while looking stunning for years.",
+                features: ["Realistic Wood Grain", "Zero Wood Maintenance", "Humidity Resistant"]
+            },
+            "impact-glass": {
+                name: "Impact-Rated Glass Door",
+                image: "https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop",
+                description: "Designed specifically for Florida's hurricane codes, impact-rated glass doors combine wind-load protection with modern aesthetics. Laminated safety glass and reinforced aluminum frames meet Miami-Dade and Broward County building requirements while letting in natural light.",
+                features: ["Miami-Dade Approved", "Laminated Safety Glass", "Wind-Load Certified"]
+            },
+            "flush-panel": {
+                name: "Flush Panel",
+                image: "https://images.pexels.com/photos/2119714/pexels-photo-2119714.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop",
+                description: "Clean, smooth, and modern \u2014 flush panel doors offer a minimalist look that works with nearly any home style. Their flat surface can be painted to match your home's exterior perfectly. Available in insulated steel for excellent energy efficiency and quiet operation.",
+                features: ["Minimalist Design", "Paintable Surface", "Energy Efficient"]
+            },
+            "custom": {
+                name: "Custom Designer Door",
+                image: "https://images.pexels.com/photos/1838640/pexels-photo-1838640.jpeg?auto=compress&cs=tinysrgb&w=700&h=400&fit=crop",
+                description: "Your vision, built to order. A fully custom garage door lets you choose every detail \u2014 material, color, window placement, panel design, hardware, and insulation level. Ideal for luxury homes, unique architectural styles, or homeowners who want a one-of-a-kind statement piece.",
+                features: ["Fully Customizable", "Premium Materials", "Architectural Statement"]
+            }
+        };
+
+        var currentQuestion = 0;
+        var answers = [];
+        var wrapper = document.getElementById('quizWrapper');
+        var progressFill = document.getElementById('quizProgressFill');
+        var progressText = document.getElementById('quizProgressText');
+        var progressBar = document.getElementById('quizProgress');
+
+        function renderQuestion(index) {
+            var q = questions[index];
+            var colClass = q.cols === 3 ? ' three-col' : '';
+            var html = '<div class="quiz-question" id="currentQ">';
+            html += '<h2>' + q.text + '</h2>';
+            html += '<div class="quiz-answers' + colClass + '">';
+            for (var i = 0; i < q.answers.length; i++) {
+                var a = q.answers[i];
+                html += '<button class="quiz-answer-btn" data-value="' + a.value + '">';
+                html += '<i class="fas ' + a.icon + '"></i>';
+                html += '<span>' + a.label + '</span>';
+                html += '</button>';
+            }
+            html += '</div></div>';
+            wrapper.innerHTML = html;
+            updateProgress(index);
+            var buttons = wrapper.querySelectorAll('.quiz-answer-btn');
+            for (var j = 0; j < buttons.length; j++) {
+                buttons[j].addEventListener('click', function() {
+                    selectAnswer(this.getAttribute('data-value'));
+                });
+            }
+        }
+
+        function updateProgress(index) {
+            var pct = ((index + 1) / questions.length) * 100;
+            progressFill.style.width = pct + '%';
+            progressText.textContent = (index + 1) + ' of ' + questions.length;
+        }
+
+        function selectAnswer(value) {
+            answers[currentQuestion] = value;
+            var currentEl = document.getElementById('currentQ');
+            currentEl.classList.add('fade-out');
+            setTimeout(function() {
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    renderQuestion(currentQuestion);
+                } else {
+                    showResult();
+                }
+            }, 300);
+        }
+
+        function getRecommendation() {
+            var style = answers[0];
+            var priority = answers[1];
+            var material = answers[2];
+            var hurricane = answers[3];
+            var budget = answers[4];
+            var windows = answers[5];
+
+            // Hurricane + must meet code + glass preference
+            if (hurricane === 'yes' && (material === 'aluminum' || windows === 'lots')) {
+                return recommendations['impact-glass'];
+            }
+
+            // Modern style + aluminum material
+            if (style === 'modern' && material === 'aluminum') {
+                return recommendations['modern-aluminum'];
+            }
+
+            // Modern style + minimalist preference
+            if (style === 'modern' && windows === 'none') {
+                return recommendations['flush-panel'];
+            }
+
+            // Mediterranean style
+            if (style === 'mediterranean') {
+                return recommendations['mediterranean'];
+            }
+
+            // Craftsman style
+            if (style === 'craftsman') {
+                return recommendations['carriage-house'];
+            }
+
+            // Wood material preference
+            if (material === 'wood') {
+                return recommendations['wood-look'];
+            }
+
+            // Luxury budget
+            if (budget === 'luxury') {
+                return recommendations['custom'];
+            }
+
+            // Modern style general
+            if (style === 'modern') {
+                return recommendations['modern-aluminum'];
+            }
+
+            // Hurricane priority
+            if (priority === 'hurricane' || hurricane === 'yes') {
+                return recommendations['impact-glass'];
+            }
+
+            // Style priority with aluminum
+            if (priority === 'style' && material === 'aluminum') {
+                return recommendations['modern-aluminum'];
+            }
+
+            // Energy efficiency
+            if (priority === 'energy') {
+                return recommendations['flush-panel'];
+            }
+
+            // Low maintenance
+            if (priority === 'maintenance') {
+                return recommendations['traditional-raised'];
+            }
+
+            // Premium budget with style focus
+            if (budget === 'premium' && priority === 'style') {
+                return recommendations['custom'];
+            }
+
+            // Default
+            return recommendations['traditional-raised'];
+        }
+
+        function showResult() {
+            progressBar.style.display = 'none';
+            var rec = getRecommendation();
+            var html = '<div class="quiz-result">';
+            html += '<img src="' + rec.image + '" alt="' + rec.name + ' garage door" class="quiz-result-img" loading="lazy">';
+            html += '<span class="quiz-result-badge"><i class="fas fa-star"></i> Your Perfect Match</span>';
+            html += '<h2>' + rec.name + '</h2>';
+            html += '<p>' + rec.description + '</p>';
+            html += '<div class="quiz-result-features">';
+            for (var i = 0; i < rec.features.length; i++) {
+                html += '<span class="quiz-result-feature"><i class="fas fa-check-circle"></i> ' + rec.features[i] + '</span>';
+            }
+            html += '</div>';
+            html += '<div class="quiz-result-actions">';
+            html += '<a href="contact.html" class="btn btn-primary"><i class="fas fa-file-invoice"></i> Get a Free Quote for This Door</a>';
+            html += '<button class="quiz-retake-btn" id="retakeBtn"><i class="fas fa-redo"></i> Retake Quiz</button>';
+            html += '</div></div>';
+            wrapper.innerHTML = html;
+            document.getElementById('retakeBtn').addEventListener('click', function() {
+                currentQuestion = 0;
+                answers = [];
+                progressBar.style.display = 'flex';
+                renderQuestion(0);
+                wrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        }
+
+        renderQuestion(0);
+    })();
+    </script>
+</body>
+</html>
