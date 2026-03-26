@@ -4,6 +4,29 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // ---------- Scroll Animations ----------
+    var animateElements = document.querySelectorAll('.service-card, .step-card, .gallery-item, .hurricane-card, .testimonial-card, .feature-item, .platform, .brand-item, .stat-item');
+
+    if (animateElements.length > 0 && 'IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry, index) {
+                if (entry.isIntersecting) {
+                    // Stagger the animation based on sibling index
+                    var siblings = entry.target.parentElement.children;
+                    var idx = Array.prototype.indexOf.call(siblings, entry.target);
+                    entry.target.style.transitionDelay = (idx * 0.08) + 's';
+                    entry.target.classList.add('animate-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        animateElements.forEach(function (el) {
+            el.classList.add('animate-hidden');
+            observer.observe(el);
+        });
+    }
+
     // ---------- Mobile Navigation ----------
     const mobileToggle = document.getElementById('mobile-toggle');
     const nav = document.getElementById('nav');
