@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://royaleagleweb.github.io/proteam-garage-door/sitemap.xml
+Sitemap: https://proteamgarage.com/sitemap.xml
 
 User-agent: Googlebot
 Allow: /

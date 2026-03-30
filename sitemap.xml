@@ -2,217 +2,369 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/about.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/about.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/contact.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/contact.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/garage-door-styles.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/parts-accessories.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/garage-door-styles.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/faq.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/parts-accessories.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/financing.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/faq.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/specials.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/financing.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/specials.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/quiz.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/diagnostic.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/hurricane-prep.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/team.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Service Pages -->
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/services/garage-door-installation.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/services/garage-door-installation.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/services/garage-door-repair.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/services/garage-door-repair.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/services/garage-door-openers.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/services/garage-door-openers.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/services/spring-replacement.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/services/spring-replacement.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/services/hurricane-garage-doors.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/services/hurricane-garage-doors.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/services/commercial-garage-doors.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/services/commercial-garage-doors.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/services/garage-door-maintenance.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/services/garage-door-maintenance.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Location Pages -->
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/fort-lauderdale.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/fort-lauderdale.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/boca-raton.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/boca-raton.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/pompano-beach.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/pompano-beach.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/coral-springs.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/coral-springs.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/deerfield-beach.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/west-palm-beach.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/delray-beach.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/hollywood.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/boynton-beach.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/plantation.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/west-palm-beach.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/davie.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/hollywood.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/weston.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/plantation.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/deerfield-beach.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/davie.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/delray-beach.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/sunrise.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/boynton-beach.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/weston.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/sunrise.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/coconut-creek.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/parkland.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/margate.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/coconut-creek.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/tamarac.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/jupiter.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/parkland.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/palm-beach-gardens.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/jupiter.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/wellington.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/palm-beach-gardens.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/margate.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://royaleagleweb.github.io/proteam-garage-door/locations/wellington.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://proteamgarage.com/locations/tamarac.html</loc>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://proteamgarage.com/blog/index.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/how-to-choose-the-right-garage-door.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/seasonal-garage-door-maintenance-checklist.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/signs-garage-door-springs-need-replacement.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/hurricane-rated-garage-doors-complete-guide.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/smart-garage-door-openers-guide.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/garage-door-cost-guide.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/garage-door-wont-open-troubleshooting.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/garage-door-design-trends-2026.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/steel-vs-wood-vs-aluminum-garage-doors.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/how-to-lubricate-garage-door.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/repair-or-replace-garage-door.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/wind-mitigation-inspection-save-insurance.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/belt-drive-vs-chain-drive-opener.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/garage-door-safety-tips-families.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/boost-curb-appeal-garage-door.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/why-is-my-garage-door-so-noisy.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/insulated-vs-non-insulated-garage-doors.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/garage-door-security-smart-features.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/prepare-garage-door-hurricane-season.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proteamgarage.com/blog/garage-door-roi-home-value.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
