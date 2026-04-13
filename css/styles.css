@@ -4,23 +4,23 @@
 
 /* ---------- CSS Variables ---------- */
 :root {
-    --primary: #0F4C3A;
-    --primary-dark: #0A3328;
-    --primary-light: #1A6B52;
+    --primary: #0B6E4F;
+    --primary-dark: #084D37;
+    --primary-light: #0E8C64;
     --accent: #2ECC71;
     --accent-dark: #27AE60;
     --accent-light: #58D68D;
     --dark: #0D1B16;
     --dark-gray: #2C3E36;
     --gray: #5F7A6E;
-    --light-gray: #D5E0DA;
-    --lighter-gray: #EDF2EF;
+    --light-gray: #E8F0EC;
+    --lighter-gray: #F4F9F6;
     --white: #FFFFFF;
     --success: #2ECC71;
-    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-    --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
-    --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-    --shadow-xl: 0 25px 60px rgba(0,0,0,0.18);
+    --shadow-sm: 0 2px 8px rgba(11,110,79,0.05);
+    --shadow-md: 0 4px 20px rgba(11,110,79,0.07);
+    --shadow-lg: 0 12px 40px rgba(11,110,79,0.10);
+    --shadow-xl: 0 25px 60px rgba(11,110,79,0.14);
     --shadow-glow: 0 0 30px rgba(46,204,113,0.15);
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -107,8 +107,8 @@ body {
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.7;
-    color: var(--dark-gray);
-    background: var(--white);
+    color: #334155;
+    background: #FAFCFB;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -153,15 +153,16 @@ img {
 
 .section-badge {
     display: inline-block;
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    color: var(--white);
+    background: rgba(46,204,113,0.1);
+    color: var(--primary);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    padding: 6px 18px;
+    padding: 8px 20px;
     border-radius: 50px;
     margin-bottom: 16px;
+    border: 1px solid rgba(46,204,113,0.25);
 }
 
 .section-header h2 {
@@ -176,7 +177,7 @@ img {
 }
 
 .highlight {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 /* ---------- Buttons ---------- */
@@ -256,7 +257,7 @@ img {
 
 /* ---------- Top Bar ---------- */
 .top-bar {
-    background: var(--primary-dark);
+    background: #062E22;
     color: rgba(255,255,255,0.85);
     font-size: 0.82rem;
     padding: 8px 0;
@@ -320,13 +321,14 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(11,110,79,0.06);
     transition: var(--transition);
 }
 
 .header.scrolled {
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 20px rgba(11,110,79,0.08);
 }
 
 .header-content {
@@ -386,7 +388,7 @@ img {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 .nav-link::after {
@@ -489,9 +491,7 @@ img {
 }
 
 .hero-badge i {
-    color: #F39C12;
-    animation: pulse-glow 2s infinite;
-    border-radius: 50%;
+    color: #2ECC71;
 }
 
 .hero h1 {
@@ -505,11 +505,7 @@ img {
 }
 
 .hero h1 .highlight {
-    color: var(--accent-light);
-    background: linear-gradient(135deg, #2ECC71, #58D68D);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #58D68D;
 }
 
 .hero-subtitle {
@@ -553,7 +549,7 @@ img {
 
 /* ---------- Stats Bar ---------- */
 .stats-bar {
-    background: linear-gradient(135deg, #27AE60, #2ECC71, #1ABC9C);
+    background: linear-gradient(135deg, #0B6E4F, #0E8C64);
     padding: 0;
     position: relative;
     overflow: hidden;
@@ -618,7 +614,7 @@ img {
 
 /* ---------- How It Works ---------- */
 .how-it-works {
-    background: linear-gradient(180deg, var(--lighter-gray) 0%, #E8F0EC 100%);
+    background: var(--lighter-gray);
     position: relative;
 }
 
@@ -726,7 +722,7 @@ img {
 
 /* ---------- Services ---------- */
 .services {
-    background: var(--lighter-gray);
+    background: var(--white);
 }
 
 .services-grid {
@@ -793,10 +789,10 @@ img {
 .service-card::before {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 3px;
     background: linear-gradient(90deg, var(--primary), var(--accent));
     transform: scaleX(0);
     transform-origin: left;
@@ -805,7 +801,7 @@ img {
 
 .service-card:hover {
     transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 16px 48px rgba(11,110,79,0.12);
 }
 
 .service-card:hover::before {
@@ -841,10 +837,11 @@ img {
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 0.9rem;
-    color: var(--accent);
+    color: var(--primary);
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    margin-top: auto;
 }
 
 .service-link:hover {
@@ -854,7 +851,7 @@ img {
 
 /* ---------- Why Choose Us ---------- */
 .why-us {
-    background: var(--white);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F4F9F6 100%);
 }
 
 .why-us-layout {
@@ -1035,7 +1032,7 @@ img {
 
 /* ---------- Gallery ---------- */
 .gallery {
-    background: linear-gradient(180deg, #f7faf8 0%, var(--lighter-gray) 100%);
+    background: var(--white);
 }
 
 .gallery-grid {
@@ -1121,7 +1118,7 @@ img {
 
 /* ---------- Testimonials ---------- */
 .testimonials {
-    background: var(--white);
+    background: var(--lighter-gray);
 }
 
 .testimonials-grid {
@@ -1148,7 +1145,7 @@ img {
     right: 24px;
     font-size: 4rem;
     font-family: Georgia, serif;
-    color: rgba(46,204,113,0.12);
+    color: rgba(11,110,79,0.08);
     line-height: 1;
 }
 
@@ -1159,7 +1156,7 @@ img {
 }
 
 .testimonial-stars {
-    color: #F39C12;
+    color: #2ECC71;
     font-size: 1rem;
     margin-bottom: 18px;
     display: flex;
@@ -1238,7 +1235,7 @@ img {
     display: flex;
     align-items: center;
     gap: 2px;
-    color: #F39C12;
+    color: #2ECC71;
     font-size: 0.85rem;
 }
 
@@ -1250,9 +1247,9 @@ img {
 
 /* ---------- Brands ---------- */
 .brands {
-    background: var(--white);
-    border-top: 1px solid var(--light-gray);
-    border-bottom: 1px solid var(--light-gray);
+    background: var(--lighter-gray);
+    border-top: none;
+    border-bottom: none;
 }
 
 .brands-title {
@@ -1496,8 +1493,8 @@ img {
 
 /* ---------- Footer ---------- */
 .footer {
-    background: var(--dark);
-    color: rgba(255,255,255,0.7);
+    background: linear-gradient(180deg, #062E22 0%, #041F17 100%);
+    color: rgba(255,255,255,0.75);
     padding-top: 80px;
 }
 
@@ -1973,7 +1970,7 @@ img {
 
 /* ---------- CTA Banner ---------- */
 .cta-banner {
-    background: linear-gradient(135deg, #27AE60, #2ECC71, #1ABC9C);
+    background: linear-gradient(135deg, #0B6E4F, #0E8C64, #2ECC71);
     padding: 80px 0;
     text-align: center;
     color: var(--white);
@@ -2042,19 +2039,21 @@ img {
 
 .area-link {
     padding: 10px 22px;
-    background: var(--lighter-gray);
+    background: var(--white);
     border-radius: 50px;
     font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--dark-gray);
+    font-weight: 600;
+    color: var(--primary);
     transition: var(--transition);
-    border: 1px solid transparent;
+    border: 1px solid var(--light-gray);
 }
 
 .area-link:hover {
     background: var(--primary);
     color: var(--white);
     border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11,110,79,0.15);
 }
 
 /* ---------- Contact Benefits (Contact page) ---------- */
