@@ -869,61 +869,107 @@ img {
     gap: 10px;
 }
 
-/* ---------- Why Choose Us ---------- */
-.why-us {
+/* ---------- About Us ---------- */
+.about-section {
+    padding: 100px 0 0;
     background: linear-gradient(180deg, #FFFFFF 0%, #F4F9F6 100%);
+    overflow: hidden;
 }
 
-.why-us-layout {
+.about-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.why-us-image {
-    position: relative;
-    padding: 16px;
-}
-
-.why-us-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 2px solid rgba(46,204,113,0.25);
-    border-radius: var(--radius-xl);
-    z-index: 0;
-}
-
-.why-us-image img {
-    border-radius: calc(var(--radius-xl) - 4px);
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-    box-shadow: var(--shadow-md);
-    position: relative;
-    z-index: 1;
-}
-
-.why-us-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 16px;
-}
-
-.why-us-content > p {
-    font-size: 1.05rem;
-    color: var(--gray);
-    margin-bottom: 32px;
-    line-height: 1.8;
-}
-
-.why-us-features {
+.about-text {
+    padding: 60px 60px 60px 80px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    justify-content: center;
+}
+
+.about-text h2 {
+    font-size: 2.4rem;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    color: var(--dark);
+}
+
+.about-text > p {
+    font-size: 1.05rem;
+    color: var(--gray);
+    margin-bottom: 16px;
+    line-height: 1.85;
+}
+
+.about-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 0;
+    border-top: 1px solid var(--light-gray);
+}
+
+.about-feature-card {
+    padding: 36px 28px;
+    text-align: center;
+    border-right: 1px solid var(--light-gray);
+    transition: var(--transition);
+}
+
+.about-feature-card:last-child {
+    border-right: none;
+}
+
+.about-feature-card:hover {
+    background: var(--white);
+    box-shadow: 0 -4px 20px rgba(11,110,79,0.06);
+}
+
+.about-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    margin: 0 auto 16px;
+}
+
+.about-feature-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.about-feature-card p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.6;
 }
 
 .feature-item {
@@ -939,19 +985,6 @@ img {
     flex-shrink: 0;
 }
 
-.about-icon {
-    width: 48px;
-    height: 48px;
-    background: var(--primary);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-}
-
 .feature-item h4 {
     font-size: 1rem;
     margin-bottom: 4px;
@@ -961,13 +994,6 @@ img {
     font-size: 0.9rem;
     color: var(--gray);
     line-height: 1.6;
-}
-
-.why-us-buttons {
-    display: flex;
-    gap: 14px;
-    margin-top: 32px;
-    flex-wrap: wrap;
 }
 
 /* ---------- Hurricane Section ---------- */
@@ -2413,16 +2439,32 @@ img {
         grid-template-columns: 1fr;
     }
 
-    .why-us-layout {
+    .about-wrapper {
         grid-template-columns: 1fr;
     }
 
-    .why-us-image {
-        order: -1;
+    .about-text {
+        padding: 40px 20px;
     }
 
-    .why-us-image img {
-        height: 300px;
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-image img {
+        min-height: 320px;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-feature-card {
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    .about-feature-card:nth-child(2) {
+        border-right: none;
     }
 
     .hurricane-grid {
